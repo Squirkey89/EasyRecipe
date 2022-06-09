@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easy Recipes</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/97488dfb41.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <h1><i class="fa-solid fa-hat-chef"></i>Easy Recipes</h1>
+                    <h2 class="logo">Cooking made easy</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'create_recipe' %}">CREATE RECIPE</a>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'recipe' %}">RECIPE</a>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">SIGN UP</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">LOGIN</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    {% block content %}
+
+    {% endblock content %}
+    <section>
+        <footer class="bg-dark text-white pt-5 pb-4">
+            <div class="row align-items-center">
+
+                <div class="col-md-7 col-lg-8">
+                    <p class="foot-logo">Copyright reserved by:<strong class="font-weight-bold text-warning"> Easy
+                            Recipe&copy;</strong></p>
+
+                </div>
+                <div class="col-md-5 col-lg-4 footer">
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/" target="_blank"
+                                    class="btn-floating btn-sm text-white" style="font: size 23px;"><i
+                                        class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://twitter.com/" target="_blank" class="btn-floating btn-sm text-white"
+                                    style="font: size 23px;"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/" target="_blank"
+                                    class="btn-floating btn-sm text-white" style="font: size 23px;"><i
+                                        class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/" target="_blank"
+                                    class="btn-floating btn-sm text-white" style="font: size 23px;"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.youtube.com/" target="_blank"
+                                    class="btn-floating btn-sm text-white" style="font: size 23px;"><i
+                                        class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            </div>
+
+        </footer>
+    </section>
+</body>
+
+</html>

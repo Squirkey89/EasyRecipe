@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+  <div class="row">
+    <div class="container-img">
+      {% load static %}
+      <img class="image" src="{% static '/images/food.jpg' %}" alt="home">
+
+      <div class="centered">Welcome to Easy Recipes. You'll find simple, step-by-step recipes that you can
+        make yourself.</div>
+    </div>
+  </div>
+</section>
+<section class="wrapper">
+  <div class="info">
+    <h1 class="title text-center">WHAT WE DO?</h1>
+    <div class="text-center">
+      <p>We want to create a library of tasty dishes, and want to show you how easy it is to prepare
+        these meals yourself.</p>
+      <p>Using this website, you can discover which dishes to prepare for today, tomorrow, the rest of the
+        week, and on special occasions.</p>
+      <p>This website will be community-driven. Share your family recipes that your
+        parents and grandparents
+        taught you that will be used for generations to come. </p>
+      <p>If you would like to add a recipe, just go to the sign up page and after you are signed up, you can
+        add recipes.</p>
+      <p>All the recipes you have created will appear on the recipe page, where you can browse them and those
+        created by others.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="container">
+  <div class="row">
+    <h1 class="title text-center">How it works</h1>
+    <ul class="image-list-small">
+      <li>
+          <a href="#"><img src="{% static '/images/su.jpeg' %}" alt=""></a>
+          <div class="details">
+            <h3><a href="#">Sign Up</a></h3>
+          </div>
+        </li>
+        <li>
+        <a href="{% url 'create_recipe' %}"><img src="{% static '/images/iStock-187990397-1024x686-1.jpg' %}" alt="" />
+          <div class="details">
+            <h3><a href="#">Create Receipe</a></h3>
+          </div>
+      </li>
+      <li>
+        <a href="{% url 'recipe' %}"><img src="{% static '/images/Spaghetti-Sauce-13.jpg' %}" alt=""></a>
+        <div class="details">
+          <h3><a href="#">Recipes</a></h3>
+        </div>
+      </li>
+    </ul>
+</section>
+{% endblock content %}
