@@ -1,11 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
 <section>
   <div class="row">
     <div class="container-img">
       {% load static %}
-      <img class="image" src="{% static '/images/food.jpg' %}" alt="home">
+      <img class="image" src="{% static 'media/images/food.jpg' %}" alt="home">
 
       <div class="centered">Welcome to Easy Recipes. You'll find simple, step-by-step recipes that you can
         make yourself.</div>
@@ -36,20 +38,21 @@
   <div class="row">
     <h1 class="title text-center">How it works</h1>
     <ul class="image-list-small">
+      {% load static %}
       <li>
-          <a href="#"><img src="{% static '/images/su.jpeg' %}" alt=""></a>
-          <div class="details">
-            <h3><a href="#">Sign Up</a></h3>
+        <a href="{% url 'signup' %}"><img src="{% static 'images/su.jpeg' %}" alt="" />
+           <div class="details">
+           <h3><a href="#">Sign Up</a></h3>
           </div>
         </li>
         <li>
-        <a href="{% url 'create_recipe' %}"><img src="{% static '/images/iStock-187990397-1024x686-1.jpg' %}" alt="" />
+        <a href="{% url 'create_recipe' %}"><img src="{% static 'images/iStock-187990397-1024x686-1.jpg' %}" alt="" />
           <div class="details">
             <h3><a href="#">Create Receipe</a></h3>
           </div>
       </li>
       <li>
-        <a href="{% url 'recipe' %}"><img src="{% static '/images/Spaghetti-Sauce-13.jpg' %}" alt=""></a>
+        <a href="{% url 'recipe' %}"><img src="{% static 'images/Spaghetti-Sauce-13.jpg' %}" alt=""></a>
         <div class="details">
           <h3><a href="#">Recipes</a></h3>
         </div>

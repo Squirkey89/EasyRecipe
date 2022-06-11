@@ -1,1 +1,22 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container form-border">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Create Recipe</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="text-center">
+                <button class="btn btn-secondary right mb-2 align-center" type="submit" value="Save">Add Recipe</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
