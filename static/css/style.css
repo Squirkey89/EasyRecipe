@@ -20,7 +20,6 @@ body {
 /*--------navbar-----------*/
 
 #nav-bar {
-    position: sticky;
     top: 0;
     z-index: 10;
     color: rgba(250, 248, 248, 0.989);
@@ -228,4 +227,7 @@ body {
 
 .content{
     flex-grow: 1;
+}
+.card{
+    margin-top: 100px;
 }

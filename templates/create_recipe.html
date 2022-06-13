@@ -8,15 +8,48 @@
     <div class="row">
         <div class="col">
             <h1 class="text-center">Create Recipe</h1>
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form|crispy }}
-                <div class="text-center">
-                <button class="btn btn-secondary right mb-2 align-center" type="submit" value="Save">Add Recipe</button>
-            </div>
+                <div class="container">
+                    <div class="form-row">
+                        <div class="form-group">
+                            {{ form.title|as_crispy_field }}
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                            {{ form.description|as_crispy_field }}
+                        </div>
+                        <div class="row">
+                        <div class="col-4">
+                            {{ form.prep_time|as_crispy_field }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.serves|as_crispy_field }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.cook_time|as_crispy_field }}
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                {{ form.ingredients|as_crispy_field }}
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    {{ form.instructions|as_crispy_field }}
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        {{ form.featured_image|as_crispy_field }}
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-secondary right mb-2 align-center" type="submit"
+                                            value="Save">Add
+                                            Recipe</button>
+                                    </div>
             </form>
         </div>
     </div>
 </div>
-    
+
 {% endblock %}
