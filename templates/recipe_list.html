@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-<form method="POST" action="{% url 'recipe_list' %}" enctype="multipart/form-data">
-{% csrf_token %}
-{{form}}
-<button>submit</button>
-</form>
-{% endblock %}
