@@ -236,3 +236,28 @@ h1{
 }
 
 /*--------cards-----------*/
+.head{
+    margin: 60px;
+    font-family: 'Lora', serif;
+}
+
+
+.card{
+    margin: auto;
+    display: inline-block;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+
+    .card-img {
+        height: 250px;
+        object-fit: cover;
+      }
+    
+ 
+
+#card-btn{
+    bottom: 150px;
+}

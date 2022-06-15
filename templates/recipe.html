@@ -1,0 +1,42 @@
+    {% extends "base.html" %}
+
+    {% block content %}
+
+    {% load static %}
+
+    <div class="container-fluid mt-5 mb-5">
+        <div><h1 class="text-center head">Recipes</h1></div>
+            <div class="row">
+            {% for recipe in list_recipe %}
+            <div class="row col-4">
+                <div class="card mt-3 mb-5" style="width: 22rem;">
+                    {% if "placeholder" in recipe.featured_image.url %}
+                    <img src="https://res.cloudinary.com/squirkey89/image/upload/v1654978534/91c56347-e8d0-466f-b0a2-3fe092f49605_upxgxh.jpg"
+                        class="card-img" alt="...">
+                    {% else %}
+                    <img class="card-img" src="{{ recipe.featured_image.url }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ recipe.title }}</h5>
+                    </div>                        
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-center"> Prep time: {{ recipe.prep_time }}</li>
+                            <li class="list-group-item text-center"> Cook time: {{ recipe.cook_time }}</li>
+                            <li class="list-group-item text-center"> Serves: {{ recipe.serves }}</li>
+                            <li class="list-group-item align-items-center"><i class="fa-solid fa-heart"></i>
+                       
+                        <div class="text-center">
+                            <a href="#" class="btn btn-secondary right mb-2 align-center" id="card-btn">View Recipe</a>
+                    </div>
+                </ul>               
+             </div>
+            </div>
+
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            
+            {% endblock %}
