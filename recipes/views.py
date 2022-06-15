@@ -5,11 +5,17 @@ from .models import Recipe
 from .forms import RecipeForm
 
 
-# class RecipeList(generic.ListView):
-#     model = Recipe
-#     list_recipe = Recipe.objects.filter(status=1).order_by("-created_on")
-#     template_name = "recipe.html"
-#     paginate_by = 6
+class RecipeList(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.all()
+    list_recipe = queryset
+    template_name = 'recipe.html'
+    paginate_by = 6
+
+
+# def recipe(request):
+#     list_recipe = Recipe.objects.all()
+#     return render(request, "recipe.html", {'list_recipe': list_recipe})
 
 
 def create_recipe(request):
@@ -23,11 +29,6 @@ def create_recipe(request):
             recipe_form.save()
             return redirect(home)
     return render(request, "create_recipe.html", {'form': RecipeForm})
-
-
-def recipe(request):
-    list_recipe = Recipe.objects.all()
-    return render(request, "recipe.html", {'list_recipe': list_recipe})
 
 
 def home(request):

@@ -222,7 +222,7 @@ h1{
     padding: 30px;
     border-radius: 10px;
     margin: 30px;
-    background-color: #f0ede6;
+    background-color: white;
 
 }
 .container{
@@ -252,12 +252,18 @@ h1{
 
 
     .card-img {
-        height: 250px;
+        height: 300px!important;
+        background-clip: padding-box;
         object-fit: cover;
-      }
-    
+    }
  
 
 #card-btn{
     bottom: 150px;
+}
+/*--------cards-----------*/
+
+.pagi{
+    list-style: none;
+    color: #303030;
 }
