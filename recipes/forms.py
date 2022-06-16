@@ -9,7 +9,4 @@ class RecipeForm(ModelForm):
         model = Recipe
         fields = ['title', 'description', 'prep_time', 'cook_time', 
         'serves', 'ingredients', 'instructions', 'featured_image', ]
-        def __init__(self, *args, **kwargs):
-            super(RecipeForm, self).__init__(*args, **kwargs)
-            self.helper = FormHelper()
-            self.helper.form_show_labels = False 
+       
