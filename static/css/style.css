@@ -263,7 +263,7 @@ h1{
 }
 /*--------cards-----------*/
 
-.pagi{
-    list-style: none;
-    color: #303030;
+.asteriskField {
+    display: none;
 }
+
