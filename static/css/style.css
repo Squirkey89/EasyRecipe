@@ -251,13 +251,6 @@ h1{
 }
 
 
-    .card-img {
-        height: 300px!important;
-        background-clip: padding-box;
-        object-fit: cover;
-    }
- 
-
 #card-btn{
     bottom: 150px;
 }
