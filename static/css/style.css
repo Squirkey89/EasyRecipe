@@ -218,11 +218,10 @@ h1{
 
 }
 .form-border{
-    border: 2px solid black;
+    border: 3px solid black;
     padding: 30px;
     border-radius: 10px;
     margin: 30px;
-    background-color: white;
 
 }
 .container{
