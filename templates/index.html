@@ -4,17 +4,16 @@
 
 {% block content %}
 <section>
-  <div class="container-fluid">
-  <div class="row">
-    <div class="container-img">
-      {% load static %}
-      <img class="image" src="https://res.cloudinary.com/squirkey89/image/upload/v1654970186/food_cb6oue.jpg" alt="home">
+  
+      <div class="container-img">
+        {% load static %}
+        <img class="image" src="https://res.cloudinary.com/squirkey89/image/upload/v1654970186/food_cb6oue.jpg"
+          alt="home">
 
-      <div class="centered img-text">Welcome to Easy Recipes. You'll find simple, step-by-step recipes that you can
-        make yourself.</div>
-    </div>
-  </div>
-</div>
+        <div class="centered img-text">Welcome to Easy Recipes. You'll find simple, step-by-step recipes that you can
+          make yourself.
+        </div>
+      </div>
 </section>
 <section class="wrapper">
   <div class="info">
@@ -40,19 +39,24 @@
     <h1 class="title text-center">HOW IT WORKS</h1>
     <ul class="image-list-small">
       <li>
-        <a href="{% url 'account_signup' %}"><img src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg" alt="" />
-           <div class="details">
-           <h3><a href="#">Sign Up</a></h3>
+        <a href="{% url 'account_signup' %}"><img
+            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg" alt="" />
+          <div class="details">
+            <h3><a href="#">Sign Up</a></h3>
           </div>
-        </li>
-        <li>
-        <a href="{% url 'create_recipe' %}"><img src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/iStock-187990397-1024x686-1_btn3ss.jpg" alt="" />
+      </li>
+      <li>
+        <a href="{% url 'create_recipe' %}"><img
+            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/iStock-187990397-1024x686-1_btn3ss.jpg"
+            alt="" />
           <div class="details">
             <h3><a href="#">Create Receipe</a></h3>
           </div>
       </li>
       <li>
-        <a href="{% url 'recipe' %}"><img src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/Spaghetti-Sauce-13_t5p3be.jpg" alt=""></a>
+        <a href="{% url 'recipe' %}"><img
+            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/Spaghetti-Sauce-13_t5p3be.jpg"
+            alt=""></a>
         <div class="details">
           <h3><a href="#">Recipes</a></h3>
         </div>

@@ -16,6 +16,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+
 h1{
     font-family: 'Lora', serif;
 
@@ -64,6 +66,8 @@ h1{
     position: relative;
     text-align: center;
     color: black;
+    width: 100%;
+    height: 100%;
 }
 
 .centered {
@@ -91,10 +95,10 @@ h1{
 
 .image {
     background-repeat: no-repeat;
-    top: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
+    object-fit: cover;
+    display: block;    
 }
 
 /*--------banner-----------*/
@@ -155,6 +159,16 @@ h1{
 
 .title {
     margin-bottom: 10px;
+}
+.container-img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+
+}
+.row{
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .image-list-small {
