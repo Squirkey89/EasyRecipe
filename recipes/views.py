@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404 
 from django.http import HttpResponse
 from django.views import generic, View
 from .models import Recipe
@@ -13,11 +13,6 @@ class RecipeList(generic.ListView):
     paginate_by = 6
 
 
-# def recipe(request):
-#     list_recipe = Recipe.objects.all()
-#     return render(request, "recipe.html", {'list_recipe': list_recipe})
-
-
 def create_recipe(request):
     user = request.user
     if request.method == "POST":
@@ -27,7 +22,7 @@ def create_recipe(request):
             recipe_form.instance.author = user
             recipe_form.instance.status = 1
             recipe_form.save()
-            return redirect(home)
+            return (home)
     return render(request, "create_recipe.html", {'form': RecipeForm})
 
 
