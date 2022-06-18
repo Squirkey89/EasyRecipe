@@ -14,10 +14,6 @@
 
       <p class="text-center">{% trans 'Are you sure you want to sign out?' %}</p>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 mt-3 offset-md-2">
-
             <form method="post" action="{% url 'account_logout' %}">
               {% csrf_token %}
               {% if redirect_field_value %}
@@ -25,8 +21,10 @@
               {% endif %}
               <div class="mt-4 text-center">
               <button class="btn btn-secondary" type="submit">{% trans 'Sign Out' %}</button>
+              </div>
             </form>
           </div>
         </div>
+      </div>
 
         {% endblock %}

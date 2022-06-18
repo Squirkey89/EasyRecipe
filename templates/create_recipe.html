@@ -5,6 +5,7 @@
 {% load static %}
 
 {% load crispy_forms_tags %}
+{% if user.is_authenticated %}
 
 <div class="container">
     <div class="row">
@@ -19,39 +20,61 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                            {{ form.description|as_crispy_field }}
-                        </div>
-                        <div class="row">
-                        <div class="col-4">
-                            {{ form.prep_time|as_crispy_field }}
-                        </div>
-                        <div class="col-4">
-                            {{ form.serves|as_crispy_field }}
-                        </div>
-                        <div class="col-4">
-                            {{ form.cook_time|as_crispy_field }}
-
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                {{ form.ingredients|as_crispy_field }}
+                                {{ form.description|as_crispy_field }}
                             </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    {{ form.instructions|as_crispy_field }}
+                            <div class="row">
+                                <div class="col-4">
+                                    {{ form.prep_time|as_crispy_field }}
+                                </div>
+                                <div class="col-4">
+                                    {{ form.serves|as_crispy_field }}
+                                </div>
+                                <div class="col-4">
+                                    {{ form.cook_time|as_crispy_field }}
+
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
-                                        {{ form.featured_image|as_crispy_field }}
+                                        {{ form.ingredients|as_crispy_field }}
                                     </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-secondary right mb-2 align-center" type="submit"
-                                            value="Save">Add
-                                            Recipe</button>
-                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            {{ form.instructions|as_crispy_field }}
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                {{ form.featured_image|as_crispy_field }}
+                                            </div>
+                                        <div class="text-center">   
+                                     <button class="btn btn-secondary right mb-2 align-center" type="submit"
+                                value="Save">Add
+                        Recipe</button>
+                  </div>
             </form>
         </div>
     </div>
 </div>
+{% else %}
+<div class="container mt-5 mb-0">
+    <div class="row">
+        <div class="col-md-8 mt-5 offset-md-2 text-center">
+            <h1 class="text-center mb-4">You have not completed the registration process
+            </h1>
+            <p>In order to create recipes you need to signup to our website.</p>
+             <p>Once this is complete you can post recipes, comment and interact with recipes posted.</p>
+            <p>The sign-up button can be found on the navigation bar, or you can follow this link to
+            <a href="{% url 'account_signup' %}">sign up</a></p>
+        </div>
+
+
+        <div class="register">
+            <img class="mb-5 mt-5 register-img" src="https://res.cloudinary.com/squirkey89/image/upload/v1655545045/registration-icon-png-6_wc3xmz.png" alt=""> 
+
+        </div>
+    </div>
+</div>
+</div>
+
+{% endif %}
 
 {% endblock %}
