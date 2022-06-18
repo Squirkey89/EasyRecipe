@@ -4,6 +4,7 @@
 
 {% block content %}
 <section>
+  <div class="container-fluid">
   <div class="row">
     <div class="container-img">
       {% load static %}
@@ -13,6 +14,7 @@
         make yourself.</div>
     </div>
   </div>
+</div>
 </section>
 <section class="wrapper">
   <div class="info">
@@ -37,7 +39,6 @@
   <div class="row">
     <h1 class="title text-center">HOW IT WORKS</h1>
     <ul class="image-list-small">
-      {% load static %}
       <li>
         <a href="{% url 'account_signup' %}"><img src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg" alt="" />
            <div class="details">

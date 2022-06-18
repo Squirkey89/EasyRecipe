@@ -72,10 +72,9 @@ h1{
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 40px;
-    letter-spacing: -2;
     background-color: #FAF9F6;
     font-family: 'Lora', serif;
-    animation: fadeIn 8s;
+    animation: fadeIn 5s;
     opacity: 0.5;
 
 }
@@ -155,7 +154,7 @@ h1{
 }
 
 .title {
-    margin-bottom: 80px;
+    margin-bottom: 10px;
 }
 
 .image-list-small {
@@ -232,8 +231,7 @@ h1{
 .content{
     flex-grow: 1;
 }
-.card{
-}
+
 
 /*--------cards-----------*/
 .head{
@@ -276,6 +274,18 @@ h1{
 @media screen and (max-width: 849px) {
     .centered {
         
-        font-size: 0.5em;
+        font-size: 1.5em;
+    }
+}
+@media screen and (max-width: 634px) {
+    .centered {
+        
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width:425px) {
+    .centered {
+        
+        font-size: 1em;
     }
 }
