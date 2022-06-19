@@ -1,6 +1,6 @@
-from . import views 
+from . import views
 from django.urls import path
-from .views import RecipeList
+from .views import RecipeList, RecipeDetail
 
 
 urlpatterns = [
@@ -8,6 +8,7 @@ urlpatterns = [
     path('create_recipe', views.create_recipe, name='create_recipe'),
     path('signup', views.signup, name='signup'),
     path('recipe', RecipeList.as_view(), name='recipe'),
-    path('login', views.login, name='login'),  
+    path('<slug:slug>/', RecipeDetail.as_view(), name='recipe_detail'),
+    path('login', views.login, name='login')
     
 ]
