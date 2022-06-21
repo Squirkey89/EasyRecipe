@@ -14,9 +14,9 @@ class Recipe(models.Model):
     description = models.TextField()
     ingredients = models.TextField()
     instructions = models.TextField()
-    prep_time = models.DurationField()
-    cook_time = models.DurationField()
-    serves = models.DurationField()
+    prep_time = models.IntegerField(default=0)
+    cook_time = models.IntegerField(default=0)
+    serves = models.IntegerField(default=0)
     featured_image = (CloudinaryField('image', default='placeholder'))
     excerpt = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -40,7 +40,7 @@ class Recipe(models.Model):
 
 
 class Comment(models.Model):
-    recipe = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments")
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()

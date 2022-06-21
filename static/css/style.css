@@ -282,6 +282,10 @@ h1{
     width: 300px;
     height: 300px;
 }
+/*--------cards-----------*/
+.card-body{
+    font-size: 19px;    
+}
 
 /*--------media queries-----------*/
 
