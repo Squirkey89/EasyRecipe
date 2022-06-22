@@ -43,5 +43,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="text-center">
+                <h2>Edit or Delete posts on Easy Recipe</h2>
+                <p>You can edit or delete any recipes that you have created once you have signed up on our signup page</p>
+                <p>Just click on the relevant button below to perform that action</p>
+            <a href="{% url 'edit_recipe' recipe.slug %}" class="edit"><button class="btn btn-primary btn-md mt-4 mb-5"
+                value="{{ recipe.slug }}" type="button">Edit</button></a>
+        <a href="" Sclass="confirm-delete delete"><button class="btn btn-danger btn-md mx-4 mt-4 mb-5"
+                value="{{ recipe.slug }}" type="button">Delete</button></a>
+            </div>
        
  {% endblock content %}
