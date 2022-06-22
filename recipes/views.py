@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404 
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.views import generic, View
 from .models import Recipe, Comment
@@ -42,8 +42,30 @@ def create_recipe(request):
             recipe_form.instance.author = user
             recipe_form.instance.status = 1
             recipe_form.save()
-            return (home)
+            return redirect('home')
     return render(request, "create_recipe.html", {'form': RecipeForm})
+
+
+def edit_recipe(request, slug):
+    recipe = get_object_or_404(Recipe, slug=slug)
+    recipe_form = RecipeForm(request.POST or None, instance=recipe)
+    print('Hello World')
+    
+    if request.method == "POST":
+        recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
+        if recipe_form.is_valid():
+            recipe = recipe_form.save(commit=False)
+            recipe.author = request.user
+            recipe.save()
+        return redirect('home')
+    else:
+        recipe_form = RecipeForm(instance=recipe)
+    context = {
+        "recipe_form": recipe_form,
+        "recipe": recipe
+    }
+    print(recipe_form.errors)
+    return render(request, "edit_recipe.html", context)
 
 
 def home(request):

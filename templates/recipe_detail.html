@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-sm-6">
             <div class="mt-5 mb-0">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="https://res.cloudinary.com/squirkey89/image/upload/v1654978534/91c56347-e8d0-466f-b0a2-3fe092f49605_upxgxh.jpg"
@@ -23,7 +23,7 @@
             <h3 class="text-center mt-3 ">Cooking details</h3>
             <ul style="list-style: none;" class="card-body mt-0 mb-0">
                 <li> <strong>Description:</strong> {{ recipe.description|safe }}</li>
-                <li class="mt-4"><strong>Preparation time:</strong> {{ recipe.prep_time }} minutes</li>
+                <li class="mt-4 text-center"><strong>Preparation time:</strong> {{ recipe.prep_time }} minutes</li>
                 <li class="mt-4"> <strong>Cooking time:</strong> {{ recipe.cook_time }} minutes</li>
                 <li class="mt-4 mb-5"> <strong>Serves:</strong> {{ recipe.serves }} people</li>
             </ul>
@@ -44,4 +44,14 @@
                 </div>
             </div>
 
+            <div class="text-center">
+                <h2>Edit or Delete posts on Easy Recipe</h2>
+                <p>You can edit or delete any recipes that you have created once you have signed up on our signup page</p>
+                <p>Just click on the relevant button below to perform that action</p>
+            <a href="{% url 'edit_recipe' recipe.slug %}" class="edit"><button class="btn btn-primary btn-md mt-4 mb-5"
+                value="{{ recipe.slug }}" type="button">Edit</button></a>
+        <a href="" Sclass="confirm-delete delete"><button class="btn btn-danger btn-md mx-4 mt-4 mb-5"
+                value="{{ recipe.slug }}" type="button">Delete</button></a>
+            </div>
+       
  {% endblock content %}
