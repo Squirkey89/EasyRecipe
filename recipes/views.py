@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRe
 from django.http import HttpResponse
 from django.views import generic, View
 from .models import Recipe, Comment
-from .forms import RecipeForm
+from .forms import RecipeForm, CommentForm
 
 
 class RecipeList(generic.ListView):
@@ -29,6 +29,7 @@ class RecipeDetail(View):
                 "recipe": recipe,
                 "comments": comments,
                 "liked": liked,
+                "comment_form": CommentForm()
             },
         )
 
