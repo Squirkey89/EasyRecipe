@@ -47,6 +47,8 @@
             </div>
         </div>
     </div>
+    {% if user.is_authenticated %}
+
     <div class="text-center">
         <h2>Edit or Delete posts on Easy Recipe</h2>
         <p>You can edit or delete any recipes that you have created once you have signed up on our signup page</p>
@@ -56,13 +58,15 @@
         <a href="{% url 'delete_recipe' recipe.slug %}" class="confirm-delete delete"><button
                 class="btn btn-danger btn-md mx-4 mt-4 mb-5" value="{{ recipe.slug }}" type="button">Delete</button></a>
     </div>
+    {% endif %}
+
     <div class="row">
         <div class="col">
             <hr>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-7 card mx-1 mt-3">
+                <div class="col-md-7 offset-1 card mx-1 mt-3">
                     <h3 class="mt-3">Comments:</h3>
                     <div class="card-body">
                         {% for comment in comments %}
@@ -87,19 +91,16 @@
                             Your comment is awaiting approval
                         </div>
                         {% else %}
-                        {% if user.is_authenticated %}
-        
+                        
                         <h3>Leave a comment:</h3>
                         <p>Posting as: {{ user.username }}</p>
                         <form method="post" style="margin-top: 1.3em;">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                        </form>
+                            <button type="submit" class="btn btn-dark mt-4">Submit</button>
+                        </form>                        
                         {% endif %}
-                        {% endif %}
-        </div>
-    </div>
-</div>
-
-{% endblock content %}
+                    </div>
+                </div>
+            </div>
+            {% endblock content %}
