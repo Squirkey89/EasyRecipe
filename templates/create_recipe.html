@@ -9,20 +9,17 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2 form-group">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="container form-border">
+                <div class="form-border">
                     <h1 class="text-center">Create Recipe</h1>
-                    <div class="form-row">
-                        <div class="">
+                    <div class="row mt-3">
                             {{ form.title|as_crispy_field }}
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="row mt-3">
                                 {{ form.description|as_crispy_field }}
                             </div>
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-4">
                                     {{ form.prep_time|as_crispy_field }}
                                 </div>
@@ -33,20 +30,17 @@
                                     {{ form.cook_time|as_crispy_field }}
 
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group">
+                                <div class="col-12 mt-3">
                                         {{ form.ingredients|as_crispy_field }}
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group">
+                                    <div class="col-12 mt-3">
                                             {{ form.instructions|as_crispy_field }}
                                         </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
+                                        <div class="row">
                                                 {{ form.featured_image|as_crispy_field }}
                                             </div>
                                         <div class="text-center">   
-                                     <button class="btn btn-secondary right mb-2 align-center" type="submit"
+                                     <button class="btn btn-secondary right mb-2 align-center mt-4" type="submit"
                                 value="Save">Add
                         Recipe</button>
                   </div>
