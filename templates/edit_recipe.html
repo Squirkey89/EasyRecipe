@@ -3,45 +3,50 @@
 {% load static %}
 
 {% block content %}
+
+<!---------Page  Header---------->
+
 <title>Edit Your Recipe</title>
 
-    <div class="container">
-        <div class="row">
+<!---------Edit Recipe Form---------->
+
+<div class="container">
+    <div class="row">
         <div class="col-md-8 mt-3 offset-md-2 form-group">
-                    <h2 class="text-center mt-5 mb-0">Edit Recipe</h2>
-                </div>
-                <form action= "{% url 'edit_recipe' recipe.slug %}" method="post" enctype="multipart/form-data">
-                    <div class="row mt-0">
-                        <div class="col">
-                            {% csrf_token %}
-                            <div class="row mt-3">
-                                    {{ recipe_form.title|as_crispy_field }}
-                            </div>
-                            <div class="form-group mt-3">
-                                {{ recipe_form.description|as_crispy_field }}
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-4">
-                                    {{ recipe_form.prep_time|as_crispy_field }}
-                                </div>
-                                <div class="col-4">
-                                    {{ recipe_form.serves|as_crispy_field }}
-                                </div>
-                                <div class="col-4">
-                                    {{ recipe_form.cook_time|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                {{ recipe_form.instructions|as_crispy_field }}
-                            </div>
-                            <div class="row mt-3">
-                                {{ recipe_form.ingredients|as_crispy_field }}
-                            </div class="text-center">
-                            <button type="submit" class="btn btn-secondary right mb-2 align-center mt-3">Submit</button>
+            <h2 class="text-center mt-5 mb-0">Edit Recipe</h2>
+        </div>
+        <form action="{% url 'edit_recipe' recipe.slug %}" method="post" enctype="multipart/form-data">
+            <div class="row mt-0">
+                <div class="col">
+                    {% csrf_token %}
+                    <div class="row mt-3">
+                        {{ recipe_form.title|as_crispy_field }}
+                    </div>
+                    <div class="form-group mt-3">
+                        {{ recipe_form.description|as_crispy_field }}
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            {{ recipe_form.prep_time|as_crispy_field }}
+                        </div>
+                        <div class="col-4">
+                            {{ recipe_form.serves|as_crispy_field }}
+                        </div>
+                        <div class="col-4">
+                            {{ recipe_form.cook_time|as_crispy_field }}
                         </div>
                     </div>
-                </form>
+                    <div class="row mt-3">
+                        {{ recipe_form.instructions|as_crispy_field }}
+                    </div>
+                    <div class="row mt-3">
+                        {{ recipe_form.ingredients|as_crispy_field }}
+                    </div class="text-center">
+                    <button type="submit" class="btn btn-secondary right mb-2 align-center mt-3">Submit</button>
+                </div>
             </div>
+        </form>
     </div>
+</div>
 
 {% endblock %}

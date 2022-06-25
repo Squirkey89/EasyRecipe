@@ -7,62 +7,67 @@
 {% load crispy_forms_tags %}
 {% if user.is_authenticated %}
 
+<!---------Create Recipe Form---------->
+
 <div class="container">
     <div class="row">
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="form-border">
-                    <h1 class="text-center">Create Recipe</h1>
-                    <div class="row mt-3">
-                            {{ form.title|as_crispy_field }}
-                        </div>
-                        <div class="row mt-3">
-                                {{ form.description|as_crispy_field }}
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-4">
-                                    {{ form.prep_time|as_crispy_field }}
-                                </div>
-                                <div class="col-4">
-                                    {{ form.serves|as_crispy_field }}
-                                </div>
-                                <div class="col-4">
-                                    {{ form.cook_time|as_crispy_field }}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-border">
+                <h1 class="text-center">Create Recipe</h1>
+                <div class="row mt-3">
+                    {{ form.title|as_crispy_field }}
+                </div>
+                <div class="row mt-3">
+                    {{ form.description|as_crispy_field }}
+                </div>
+                <div class="row mt-3">
+                    <div class="col-4">
+                        {{ form.prep_time|as_crispy_field }}
+                    </div>
+                    <div class="col-4">
+                        {{ form.serves|as_crispy_field }}
+                    </div>
+                    <div class="col-4">
+                        {{ form.cook_time|as_crispy_field }}
 
-                                </div>
-                                <div class="col-12 mt-3">
-                                        {{ form.ingredients|as_crispy_field }}
-                                    </div>
-                                    <div class="col-12 mt-3">
-                                            {{ form.instructions|as_crispy_field }}
-                                        </div>
-                                        <div class="row">
-                                                {{ form.featured_image|as_crispy_field }}
-                                            </div>
-                                        <div class="text-center">   
-                                     <button class="btn btn-secondary right mb-2 align-center mt-4" type="submit"
-                                value="Save">Add
-                        Recipe</button>
-                  </div>
-            </form>
-        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        {{ form.ingredients|as_crispy_field }}
+                    </div>
+                    <div class="col-12 mt-3">
+                        {{ form.instructions|as_crispy_field }}
+                    </div>
+                    <div class="row">
+                        {{ form.featured_image|as_crispy_field }}
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-secondary right mb-2 align-center mt-4" type="submit" value="Save">Add
+                            Recipe</button>
+                    </div>
+        </form>
     </div>
 </div>
+</div>
 {% else %}
+
+<!---------Prompt to signup/sign in---------->
+
 <div class="container mt-5 mb-0">
     <h1 class="text-center mb-0">You have not completed the registration process
     </h1>
     <div class="row">
         <div class="col-md-8 mt-5 offset-md-2 text-center">
             <p>In order to create recipes you need to signup to our website.</p>
-             <p>Once this is complete you can post recipes, comment and interact with recipes posted.</p>
+            <p>Once this is complete you can post recipes, comment and interact with recipes posted.</p>
             <p>The sign-up button can be found on the navigation bar, or you can follow this link to
-            <a href="{% url 'account_signup' %}">sign up</a></p>
+                <a href="{% url 'account_signup' %}">sign up</a></p>
         </div>
 
-
         <div class="register">
-            <img class="mb-5 mt-5 register-img" src="https://res.cloudinary.com/squirkey89/image/upload/v1655545045/registration-icon-png-6_wc3xmz.png" alt=""> 
+            <img class="mb-5 mt-5 register-img"
+                src="https://res.cloudinary.com/squirkey89/image/upload/v1655545045/registration-icon-png-6_wc3xmz.png"
+                alt="registration image">
 
         </div>
     </div>

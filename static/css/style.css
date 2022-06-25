@@ -153,13 +153,14 @@ h1{
 
   }
 
-.foot-logo {
-    padding-left: 80px;
-}
+/*--------Index.html title text-----------*/
 
 .title {
     margin-bottom: 10px;
 }
+
+/*--------Index.html linked images-----------*/
+
 .container-img{
     background-size: cover;
     background-repeat: no-repeat;
@@ -226,11 +227,20 @@ h1{
   }
   .container{
     margin-bottom: 140px;
+
+/*--------banner-----------*/
+
  }
 .footer{
     margin: auto 0;
 
 }
+.foot-logo {
+    padding-left: 80px;
+}
+
+/*--------Create recipe form-----------*/
+
 .form-border{
     margin-top: 50px;
     margin-bottom: 0px;
@@ -260,6 +270,10 @@ h1{
 
 }
 
+.card-body{
+    font-size: 19px;    
+}
+
 
 #card-btn{
     bottom: 150px;
@@ -280,11 +294,6 @@ h1{
     width: 300px;
     height: 300px;
 }
-/*--------cards-----------*/
-
-.card-body{
-    font-size: 19px;    
-}
 
 /*--------comments-----------*/
 
@@ -292,16 +301,6 @@ h1{
     font-size: 16px;
     text-align: center;
 }
-
-.comment-head{
-    text-align: center;
-
-}
-
-.comment-area{
-
-}
-
 
 /*--------media queries-----------*/
 @media screen and (max-width: 991px) {
@@ -323,7 +322,7 @@ h1{
         font-size: 1.2em;
     }
 }
-@media screen and (max-width:425px) {
+@media screen and (max-width:575px) {
     .centered {
         
         font-size: 1em;

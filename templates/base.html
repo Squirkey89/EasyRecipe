@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!---------Links and scripts---------->
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Easy Recipes</title>
@@ -13,6 +15,8 @@
 </head>
 
 <body>
+    <!---------Naavigation---------->
+
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -29,8 +33,9 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'create_recipe' %}">CREATE RECIPE</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'recipe' %}">RECIPES</a>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item active"><a class="nav-link"href="{% url 'account_logout' %}">LOGOUT</a></li>
+                            {% if user.is_authenticated %}
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
+                        </li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">SIGN UP</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">LOGIN</a></li>
@@ -40,13 +45,16 @@
                 </div>
             </div>
         </nav>
-    </section>    
+    </section>
     <section class="content">
-    {% block content %}
+        {% block content %}
 
-    {% endblock content %}
-    </section>    
+        {% endblock content %}
+    </section>
     <section>
+
+        <!----Footer---->
+
         <footer class="bg-dark text-white pt-5 pb-4">
             <div class="row align-items-center">
 
