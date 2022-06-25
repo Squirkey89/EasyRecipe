@@ -19,115 +19,138 @@
                 <img src=" {{ recipe.featured_image.url }}" style="width: 100%; height: 100%;">
                 {% endif %}
             </div>
-            <p class="post-subtitle text">Created by: <em>{{ recipe.author }}</em> | Created on:
-                <em>{{ recipe.created_on }}</em></p>
-        </div>
-        <div class="col-sm-6 mt-3">
-            <div class="card">
-                <div class="card-body">
-                    <!--------Cooking details----------->
-                    <h5 class="card-title text-center">Cooking details <i class="fa fa-cutlery" aria-hidden="true"></i>
-                    </h5>
-                    <ul style="list-style: none;" class="card-body mt-0 mb-0">
-                        <li> <strong>Description:</strong> {{ recipe.description|safe }}</li>
-                        <li class="mt-4"><strong>Preparation time:</strong> {{ recipe.prep_time }} minutes</li>
-                        <li class="mt-4"> <strong>Cooking time:</strong> {{ recipe.cook_time }} minutes</li>
-                        <li class="mt-4 mb-5"> <strong>Serves:</strong> {{ recipe.serves }} people</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--------ingredients and instructions----------->
-    <div class="container card mb-5 mt-5">
-        <div class="row">
-            <div class="col mt-5 ">
-                <u>
-                    <h3>Ingredients</h3>
-                </u>
-                <p>{{ recipe.ingredients|safe }}</p>
-                <div class="col mt-5 mb-5">
-                    <u>
-                        <h3>Instructions</h3>
-                    </u>
-                    <p>{{ recipe.instructions|safe }}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% if user.id == recipe.author.id %}
-    <!--------edit/delete recipe form----------->
-    <div class="text-center">
-        <h2>Edit or Delete posts on Easy Recipe</h2>
-        <p>You can edit or delete any recipes that you have created once you have signed up on our signup page</p>
-        <p>Just click on the relevant button below to perform that action</p>
-        <a href="{% url 'edit_recipe' recipe.slug %}" class="edit"><button class="btn btn-primary btn-md mt-4 mb-5"
-                value="{{ recipe.slug }}" type="button">Edit</button></a>
-        <a href="{% url 'delete_recipe' recipe.slug %}" class="confirm-delete delete"><button
-                class="btn btn-danger btn-md mx-4 mt-4 mb-5" value="{{ recipe.slug }}" type="button">Delete</button></a>
-    </div>
-    {% endif %}
-    <div class="col mb-5">
-        <hr>
-    </div>
-    <!--------comments field----------->
-    <div class="row">
-        <div class="col-sm-7 mt-2">
-            <div class="card" style="height: 29em;">
-                <div class="card-body">
-                    <h5 class="card-title mt-2 mb-4">Comments <i class="fa fa-comments-o" aria-hidden="true"></i>
-                    </h5>
-                    {% for comment in comments %}
-                    <div class="comments">
-                        <span class="green-text">
-                            {{ comment.name }}
-                        </span>
-                        <span class=" text-muted font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
-                        {{ comment.body | linebreaks }}
-                        <hr class="text-light">
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        {% if commented %}
-        <div class="alert alert-success" role="alert">
-            Your comment is awaiting approval
-        </div>
-        {% else %}
-        {% if user.is_authenticated %}
-        <!--------comments form----------->
-        <div class="col-sm-5 mt-2">
-            <div class="card" style="height: 29em;">
-                <div class="card-body">
-                    <h5 class="card-title mt-2">Leave a comment:</h5>
-                    <p>Posting as: {{ user.username }}</p>
-                    <form method="post">
-                        {{ comment_form | crispy }}
+                <div class="like_recipe">
+                    <p class="post-subtitle text">Created by: <em>{{ recipe.author }}</em> | Created on:
+                        <em>{{ recipe.created_on }}</em>
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'recipe_like' recipe.slug %}" class="d-inline" method="POST">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-dark mt-4">Submit</button>
+                        {% if liked %}
+
+                        <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
+                                class="fas fa-heart"></i></button>
+
                         {% else %}
-                        <div class="col-sm-5 mt-2">
-                            <div class="card" style="height: 29.5em;">
-                                <div class="card-body">
-                                    <h5 class="card-title mt-2 mb-4 text-center">Leave a comment:</h5>
-                                    <p class="comment-p mt-4">You can interact with other users by commenting on their
-                                        recipes.</p>
-                                    <p class="comment-p mt-4">You can also see comments from other users on recipes that
-                                        you have posted.</p>
-                                    <p class="comment-p mt-4">To leave a comment you need to <a
-                                            href="{% url 'account_signup' %}">sign up</a> and create an account.
-                                    </p>
-                                    <p class="comment-p mt-4">If you already have an account you must <a
-                                            href="{% url 'account_login' %}">sign
-                                            in</a> to leave comments.</p>
-                                    {% endif %}
-                                    {% endif %}
+
+                        <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
+                                class="far fa-heart"></i></button>
+
+                        {% endif %}
                     </form>
+                    {% else %}
+
+                    <span class="text-secondary"><i class="far fa-heart"></i></span>
+                    {% endif %}
+                    <span class="text-seconday"> {{ recipe.number_of_likes }}</span>
                 </div>
+    </div>
+    <div class="col-sm-6 mt-3">
+        <div class="card">
+            <div class="card-body">
+
+                <!--------Cooking details----------->
+                <h5 class="card-title text-center">Cooking details <i class="fa fa-cutlery" aria-hidden="true"></i>
+                </h5>
+                <ul style="list-style: none;" class="card-body mt-0 mb-0">
+                    <li> <strong>Description:</strong> {{ recipe.description|safe }}</li>
+                    <li class="mt-4"><strong>Preparation time:</strong> {{ recipe.prep_time }} minutes</li>
+                    <li class="mt-4"> <strong>Cooking time:</strong> {{ recipe.cook_time }} minutes</li>
+                    <li class="mt-4 mb-5"> <strong>Serves:</strong> {{ recipe.serves }} people</li>
+                </ul>
             </div>
         </div>
     </div>
-    {% endblock content %}
+</div>
+<!--------ingredients and instructions----------->
+<div class="container card mb-5 mt-5">
+    <div class="row">
+        <div class="col mt-5 ">
+            <u>
+                <h3>Ingredients</h3>
+            </u>
+            <p>{{ recipe.ingredients|safe }}</p>
+            <div class="col mt-5 mb-5">
+                <u>
+                    <h3>Instructions</h3>
+                </u>
+                <p>{{ recipe.instructions|safe }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% if user.id == recipe.author.id %}
+<!--------edit/delete recipe form----------->
+<div class="text-center">
+    <h2>Edit or Delete posts on Easy Recipe</h2>
+    <p>You can edit or delete any recipes that you have created once you have signed up on our signup page</p>
+    <p>Just click on the relevant button below to perform that action</p>
+    <a href="{% url 'edit_recipe' recipe.slug %}" class="edit"><button class="btn btn-primary btn-md mt-4 mb-5"
+            value="{{ recipe.slug }}" type="button">Edit</button></a>
+    <a href="{% url 'delete_recipe' recipe.slug %}" class="confirm-delete delete"><button
+            class="btn btn-danger btn-md mx-4 mt-4 mb-5" value="{{ recipe.slug }}" type="button">Delete</button></a>
+</div>
+{% endif %}
+<div class="col mb-5">
+    <hr>
+</div>
+<!--------comments field----------->
+<div class="row">
+    <div class="col-sm-7 mt-2">
+        <div class="card" style="height: 29em;">
+            <div class="card-body">
+                <h5 class="card-title mt-2 mb-4">Comments <i class="fa fa-comments-o" aria-hidden="true"></i>
+                </h5>
+                {% for comment in comments %}
+                <div class="comments">
+                    <span class="green-text">
+                        {{ comment.name }}
+                    </span>
+                    <span class=" text-muted font-weight-normal">
+                        {{ comment.created_on }}
+                    </span> wrote:
+                    {{ comment.body | linebreaks }}
+                    <hr class="text-light">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% if commented %}
+    <div class="alert alert-success" role="alert">
+        Your comment is awaiting approval
+    </div>
+    {% else %}
+    {% if user.is_authenticated %}
+    <!--------comments form----------->
+    <div class="col-sm-5 mt-2">
+        <div class="card" style="height: 29em;">
+            <div class="card-body">
+                <h5 class="card-title mt-2">Leave a comment:</h5>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-dark mt-4">Submit</button>
+                    {% else %}
+                    <div class="col-sm-5 mt-2">
+                        <div class="card" style="height: 29.5em;">
+                            <div class="card-body">
+                                <h5 class="card-title mt-2 mb-4 text-center">Leave a comment:</h5>
+                                <p class="comment-p mt-4">You can interact with other users by commenting on their
+                                    recipes.</p>
+                                <p class="comment-p mt-4">You can also see comments from other users on recipes that
+                                    you have posted.</p>
+                                <p class="comment-p mt-4">To leave a comment you need to <a
+                                        href="{% url 'account_signup' %}">sign up</a> and create an account.
+                                </p>
+                                <p class="comment-p mt-4">If you already have an account you must <a
+                                        href="{% url 'account_login' %}">sign
+                                        in</a> to leave comments.</p>
+                                {% endif %}
+                                {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
