@@ -3,12 +3,7 @@
 {% load static %}
 
 {% block content %}
-
-<!---------Page  Header---------->
-
-<title>Edit Your Recipe</title>
-
-<!---------Edit Recipe Form---------->
+<!--Edit Recipe Form-->
 
 <div class="container">
     <div class="row">
@@ -41,7 +36,7 @@
                     </div>
                     <div class="row mt-3">
                         {{ recipe_form.ingredients|as_crispy_field }}
-                    </div class="text-center">
+                    </div>
                     <button type="submit" class="btn btn-secondary right mb-2 align-center mt-3">Submit</button>
                 </div>
             </div>

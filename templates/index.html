@@ -3,9 +3,9 @@
 
 
 {% block content %}
-<section>
+<div>
 
-  <!---------Banner Image and text---------->
+  <!--Banner Image and text-->
 
   <div class="container-img">
     {% load static %}
@@ -17,12 +17,12 @@
     </div>
   </div>
 
-  <!---------About us section---------->
+  <!--About us section-->
 
-</section>
-<section class="wrapper">
+</div>
+<div class="wrapper">
   <div class="info">
-    <h1 class="title text-center">WHAT WE DO?</h1>
+    <h2 class="title text-center">WHAT WE DO?</h2>
     <div class="text-center">
       <p>We want to create a library of tasty dishes, and want to show you how easy it is to prepare
         these meals yourself.</p>
@@ -37,37 +37,30 @@
         created by others.</p>
     </div>
   </div>
-</section>
+</div>
 
-<!---------Links showing how to use website---------->
+<!--Links showing how to use website-->
 
-<section class="container">
+<div class="container">
   <div class="row">
-    <h1 class="title text-center">HOW IT WORKS</h1>
+    <h2 class="title text-center">HOW IT WORKS</h2>
     <ul class="image-list-small">
       <li>
         <a href="{% url 'account_signup' %}"><img
-            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg" alt="sign up text" />
-          <div class="details">
-            <h3><a href="#">Sign Up</a></h3>
-          </div>
+            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg" alt="sign up text"></a>
+            <p class="details">Sign Up</p>
       </li>
       <li>
         <a href="{% url 'create_recipe' %}"><img
-            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/iStock-187990397-1024x686-1_btn3ss.jpg"
-            alt="preparing food" />
-          <div class="details">
-            <h3><a href="{% url 'create_recipe' %}">Create Receipe</a></h3>
-          </div>
+            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/iStock-187990397-1024x686-1_btn3ss.jpg" alt="preparing food"></a>
+            <p class="details">Create Receipe</p>
       </li>
       <li>
         <a href="{% url 'recipe' %}"><img
-            src="https://res.cloudinary.com/squirkey89/image/upload/c_scale,h_2546,w_3795/v1656068196/indian-food-on-restaurant-table_i7fxe1.jpg"
-            alt=""></a>
-        <div class="details">
-          <h3><a href="{% url 'recipe' %}">Recipes</a></h3>
-        </div>
+            src="https://res.cloudinary.com/squirkey89/image/upload/c_scale,h_2546,w_3795/v1656068196/indian-food-on-restaurant-table_i7fxe1.jpg" alt="table filled with recipes"></a>
+            <p class="details">Recipes</p>
       </li>
     </ul>
-</section>
+  </div>
+</div>
 {% endblock content %}

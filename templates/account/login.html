@@ -8,7 +8,7 @@
 
 {% block content %}
 
-<!--------login form----------->
+<!--login form-->
 
 <div class="container mt-5 mb-0">
   <h1 class="text-center">{% trans "Sign In" %}</h1>
@@ -20,11 +20,9 @@
       <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
-      <div class="container">
+      <div class="container mb-0">
         <div class="row">
           <div class="col-md-8 mt-3 offset-md-2">
-
-
             <form class="login" method="POST" action="{% url 'account_login' %}">
               {% csrf_token %}
               {{ form|crispy }}
@@ -33,7 +31,13 @@
               {% endif %}
               <div class="mt-4 text-center">
                 <button class="btn btn-secondary" type="submit">{% trans "Sign In" %}</button>
+              </div>
             </form>
           </div>
         </div>
-        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+  
+    {% endblock %}

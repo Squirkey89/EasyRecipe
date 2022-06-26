@@ -65,11 +65,11 @@ USE_THOUSAND_SEPARATOR = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-SUMMERNOTE_CONFIG = {'summernote': {
+# SUMMERNOTE_CONFIG = {'summernote': {
 
-        'width': '100%',
-        'height': '350', }
-}
+#         'width': '100%',
+#         'height': '350', }
+# }
 
 
 MIDDLEWARE = [

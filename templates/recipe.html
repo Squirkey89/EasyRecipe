@@ -12,9 +12,9 @@
                 <div class="card mb-5" style="width: 19rem; height: 32rem;">
                     {% if "placeholder" in recipe.featured_image.url %}
                     <img src="https://res.cloudinary.com/squirkey89/image/upload/v1654978534/91c56347-e8d0-466f-b0a2-3fe092f49605_upxgxh.jpg"
-                        class="card-img" alt="recipe images">
+                        class="card-img" alt="plate and untensils">
                     {% else %}
-                    <img class="card-img" src="{{ recipe.featured_image.url }}">
+                    <img class="card-img" src="{{ recipe.featured_image.url }}" alt="recipe images">
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ recipe.title }}</h5>
@@ -22,10 +22,10 @@
                             <li class="list-group-item text-center"> Prep time: {{ recipe.prep_time }}</li>
                             <li class="list-group-item text-center"> Cook time: {{ recipe.cook_time }}</li>
                             <li class="list-group-item text-center"> Serves: {{ recipe.serves }}</li>
-                        </div>
                     </ul> 
+                </div>
                         <div class="text-center mb-5">
-                            <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-secondary align-center mt-auto" id="card-btn">View Recipe</a>
+                            <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-secondary align-center mt-auto card-btn">View Recipe</a>
                     </div> 
             </div>               
             </div>

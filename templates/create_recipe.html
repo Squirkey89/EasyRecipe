@@ -7,7 +7,7 @@
 {% load crispy_forms_tags %}
 {% if user.is_authenticated %}
 
-<!---------Create Recipe Form---------->
+<!--Create Recipe Form-->
 
 <div class="container">
     <div class="row">
@@ -45,13 +45,14 @@
                         <button class="btn btn-secondary right mb-2 align-center mt-4" type="submit" value="Save">Add
                             Recipe</button>
                     </div>
+                </div>
+            </div>
         </form>
     </div>
 </div>
-</div>
 {% else %}
 
-<!---------Prompt to signup/sign in---------->
+<!--Prompt to signup/sign in-->
 
 <div class="container mt-5 mb-0">
     <h1 class="text-center mb-0">You have not completed the registration process
@@ -71,7 +72,6 @@
 
         </div>
     </div>
-</div>
 </div>
 
 {% endif %}

@@ -18,7 +18,7 @@ body {
 }
 
 
-h1{
+h1, h2, h3{
     font-family: 'Lora', serif;
 
 }
@@ -60,7 +60,17 @@ h1{
     float: right;
     text-align: left;
 }
+/* .signup-link{
+    background-image: url("https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg");
+}
 
+.create-link{
+
+
+}
+.recipe-link{
+
+} */
 /*--------banner-----------*/
 .container-img {
     position: relative;
@@ -173,7 +183,6 @@ h1{
 }
 
 .image-list-small {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     text-align: center;
     max-width: 640px;
@@ -212,7 +221,7 @@ h1{
 .image-list-small .details {
     margin-top: 13px;
   }  
-  .image-list-small .details h3 {
+  .image-list-small .details p {
     display: block;
     font-size: 14px;
     margin: 0 0 3px 0;
@@ -220,7 +229,7 @@ h1{
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .image-list-small .details h3 a {
+  .image-list-small .details p a {
     color: #303030;
     text-decoration: none;
     font-size: 20px;
@@ -228,15 +237,26 @@ h1{
   .container{
     margin-bottom: 140px;
 
+  }
+  .details{
+    font-size: 1.3em;
+    font-family: 'Lora', serif;
+
+
+}
+
 /*--------banner-----------*/
 
- }
+ 
 .footer{
     margin: auto 0;
 
 }
 .foot-logo {
     padding-left: 80px;
+}
+.socials{
+    font-size: 18px;
 }
 
 /*--------Create recipe form-----------*/
@@ -292,24 +312,40 @@ h1{
     height: 300px;
 }
 
+.summernote-div {
+    width: '100%';
+    height: '350';
+}
+/*--------recipe details-----------*/
+.text-area {
+    text-decoration: underline;
+}
+
+
+
 /*--------comments-----------*/
 
-.comment-p{
+.comment-p {
     font-size: 16px;
     text-align: center;
 }
 
 /*--------like button-----------*/
+.like_recipe {
+    background-color: #b2b02f;
+    /* width: 60%; */
+}
 
-.btn-like{
-    background-color: #FAF9F6 !important;
+.btn-like {
+    /* background-color: red !important; */
     border: none;
-    position: absolute;
-    top : 25px;
-    right : 340px;
+    /* font-size: 1.5em; */
+    /* position: absolute;
+    top : 18px;
+    right : 340px; */
 
 }
-.num-likes{
+/* .num-likes{
     position: absolute;
     top : 25px;
     right : 330px;
@@ -317,7 +353,7 @@ h1{
 }
 .like_recipe{
     position: relative;
-}
+} */
 
 /*--------media queries-----------*/
 @media screen and (max-width: 991px) {
@@ -347,3 +383,60 @@ h1{
 
 }
 
+/* @media screen and (max-width:1024px) {
+    .btn-like {
+        
+        top : 18px;
+        right : 160px;    
+    }
+
+    .num-likes{
+        position: absolute;
+        top : 25px;
+        right : 150px;
+    }
+
+} */
+/* @media screen and (max-width:768px) {
+    .btn-like {
+        
+        top : 44px;
+        right : 240px;    
+    }
+
+    .num-likes{
+        position: absolute;
+        top : 52px;
+        right : 230px;
+    }
+
+}
+@media screen and (max-width:425px) {
+    .btn-like {
+        
+        top : 44px;
+        right : 150px;    
+    }
+
+    .num-likes{
+        position: absolute;
+        top : 52px;
+        right : 150px;
+    }
+
+}
+
+@media screen and (max-width:375px) {
+    .btn-like { */
+        
+        /* top : 44px;
+        right : 3200px;    
+    }
+
+    .num-likes{
+        position: absolute;
+        top : 52px;
+        right : 310px; */
+    /* }
+
+} */
