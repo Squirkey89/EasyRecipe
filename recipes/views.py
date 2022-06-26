@@ -12,6 +12,7 @@ class RecipeList(generic.ListView):
     template_name = 'recipe.html'
     paginate_by = 6
 
+
 class RecipeDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -33,7 +34,6 @@ class RecipeDetail(View):
                 "comment_form": CommentForm()
             },
         )
-
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
@@ -66,8 +66,9 @@ class RecipeDetail(View):
             },
         )
 
+
 class RecipeLike(View):
-  
+
     def post(self, request, slug):
         recipe = get_object_or_404(Recipe, slug=slug)
 
@@ -95,7 +96,7 @@ def create_recipe(request):
 def edit_recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     recipe_form = RecipeForm(request.POST or None, instance=recipe)
-    
+
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
         if recipe_form.is_valid():
@@ -115,7 +116,7 @@ def edit_recipe(request, slug):
 def delete_recipe(request, slug):
     context = {}
     recipe = get_object_or_404(Recipe, slug=slug)
- 
+
     if request.method == "POST":
         recipe.delete()
         return HttpResponseRedirect("/")
@@ -133,4 +134,3 @@ def signup(request):
 
 def login(request):
     return render(request, "login.html")
-
