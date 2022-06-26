@@ -275,10 +275,6 @@ h1{
 }
 
 
-#card-btn{
-    bottom: 150px;
-}
-
 /*--------register create recipe-----------*/
 
 .asteriskField {
@@ -301,6 +297,26 @@ h1{
 .comment-p{
     font-size: 16px;
     text-align: center;
+}
+
+/*--------like button-----------*/
+
+.btn-like{
+    background-color: #FAF9F6 !important;
+    border: none;
+    position: absolute;
+    top : 25px;
+    right : 340px;
+
+}
+.num-likes{
+    position: absolute;
+    top : 25px;
+    right : 330px;
+
+}
+.like_recipe{
+    position: relative;
 }
 
 /*--------media queries-----------*/

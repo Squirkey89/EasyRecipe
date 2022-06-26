@@ -20,8 +20,8 @@
                 {% endif %}
             </div>
                 <div class="like_recipe">
-                    <p class="post-subtitle text">Created by: <em>{{ recipe.author }}</em> | Created on:
-                        <em>{{ recipe.created_on }}</em>
+                    <p class="post-subtitle text">Created by: <em>{{ recipe.author }}</em> | <br>Created on:
+                        <em>{{ recipe.created_on }}</em>|<br>
                     {% if user.is_authenticated %}
                     <form action="{% url 'recipe_like' recipe.slug %}" class="d-inline" method="POST">
                         {% csrf_token %}
@@ -41,7 +41,7 @@
 
                     <span class="text-secondary"><i class="far fa-heart"></i></span>
                     {% endif %}
-                    <span class="text-seconday"> {{ recipe.number_of_likes }}</span>
+                    <span class="text-seconday num-likes"> {{ recipe.number_of_likes }}</span>
                 </div>
     </div>
     <div class="col-sm-6 mt-3">
@@ -64,12 +64,12 @@
 <!--------ingredients and instructions----------->
 <div class="container card mb-5 mt-5">
     <div class="row">
-        <div class="col mt-5 ">
+        <div class="summernote mt-5 ">
             <u>
                 <h3>Ingredients</h3>
             </u>
             <p>{{ recipe.ingredients|safe }}</p>
-            <div class="col mt-5 mb-5">
+            <div class="summernote mt-5 mb-5">
                 <u>
                     <h3>Instructions</h3>
                 </u>
