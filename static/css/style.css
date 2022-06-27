@@ -331,29 +331,28 @@ h1, h2, h3{
 }
 
 /*--------like button-----------*/
-.like_recipe {
-    background-color: #b2b02f;
-    /* width: 60%; */
-}
 
 .btn-like {
-    /* background-color: red !important; */
+    background-color: #FAF9F6;
     border: none;
+    width: 20%;    
     /* font-size: 1.5em; */
-    /* position: absolute;
-    top : 18px;
-    right : 340px; */
+    position: absolute;
+    /* margin-top : 0;
+    margin-right : 140px; */
+    margin-left: 60px;
 
 }
-/* .num-likes{
+ .num-likes{
     position: absolute;
-    top : 25px;
-    right : 330px;
+    /* margin-top : -20px;
+    margin-right : 180px; */
+    margin-left: 90px;
 
 }
 .like_recipe{
     position: relative;
-} */
+}
 
 /*--------media queries-----------*/
 @media screen and (max-width: 991px) {
@@ -383,20 +382,22 @@ h1, h2, h3{
 
 }
 
-/* @media screen and (max-width:1024px) {
-    .btn-like {
-        
-        top : 18px;
-        right : 160px;    
-    }
+@media screen and (max-width:1024px) {
 
     .num-likes{
-        position: absolute;
-        top : 25px;
-        right : 150px;
+        margin-left: 85px;
+
     }
 
-} */
+}
+@media screen and (max-width:375px) {
+
+    .num-likes{
+        margin-left: 80px;
+
+    }
+
+}
 /* @media screen and (max-width:768px) {
     .btn-like {
         

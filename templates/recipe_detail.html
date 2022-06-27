@@ -20,10 +20,10 @@
                 {% endif %}
             </div>
             <div class="like_recipe row">
-                <p class="post-subtitle text col-8">Created by: <em>{{ recipe.author }}</em> | <br>Created on:
-                    <em>{{ recipe.created_on }}</em>|
+                <p class="post-subtitle text col-8 mb-0">Created by: <em>{{ recipe.author }}</em>| </p><p class="post-subtitle text col-8 mt-0">Created on:
+                    <em>{{ recipe.created_on }}</em>|</p>
                     <div class="col-4 btn-like">
-                        <form action="{% url 'recipe_like' recipe.slug %}" class="d-inline" method="POST">
+                        <form action="{% url 'recipe_like' recipe.slug %}" class="d-inline text-center" method="POST">
                             {% csrf_token %}
                             {% if user.is_authenticated %}
                             {% if liked %}
