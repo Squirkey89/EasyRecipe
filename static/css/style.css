@@ -253,7 +253,7 @@ h1, h2, h3{
 
 }
 .foot-logo {
-    padding-left: 80px;
+    padding-left: 100px;
 }
 .socials{
     font-size: 18px;
@@ -340,14 +340,14 @@ h1, h2, h3{
     position: absolute;
     /* margin-top : 0;
     margin-right : 140px; */
-    margin-left: 60px;
+    margin-left: 80px;
 
 }
  .num-likes{
     position: absolute;
     /* margin-top : -20px;
     margin-right : 180px; */
-    margin-left: 90px;
+    margin-left: 112px;
 
 }
 .like_recipe{
@@ -382,10 +382,10 @@ h1, h2, h3{
 
 }
 
-@media screen and (max-width:1024px) {
+ @media screen and (max-width:1024px) {
 
     .num-likes{
-        margin-left: 85px;
+        margin-left: 105px;
 
     }
 
@@ -393,26 +393,34 @@ h1, h2, h3{
 @media screen and (max-width:375px) {
 
     .num-likes{
-        margin-left: 80px;
+        margin-left: 100px;
 
     }
-
 }
-/* @media screen and (max-width:768px) {
-    .btn-like {
+@media screen and (max-width: 1199px) {
+         .foot-logo,.socials {
+            text-align: center;
+            padding: 0;
+          
+        }
+    
+     } 
+  
+ /* @media screen and (max-width:767px) {
+    /* .btn-like {
         
         top : 44px;
         right : 240px;    
-    }
+    } */
 
-    .num-likes{
+    /* .num-likes{
         position: absolute;
         top : 52px;
         right : 230px;
     }
 
-}
-@media screen and (max-width:425px) {
+ } */ 
+/* @media screen and (max-width:425px) {
     .btn-like {
         
         top : 44px;
@@ -425,19 +433,17 @@ h1, h2, h3{
         right : 150px;
     }
 
-}
+}  */
 
-@media screen and (max-width:375px) {
-    .btn-like { */
+/* @media screen and (max-width:375px) {
+    .btn-like { 
         
-        /* top : 44px;
+        top : 44px;
         right : 3200px;    
     }
 
     .num-likes{
         position: absolute;
         top : 52px;
-        right : 310px; */
-    /* }
-
-} */
+        right : 310px; 
+     }
