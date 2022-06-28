@@ -11,7 +11,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background-color: #FAF9F6 !important;
+    background-color: #FAF9F6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ h1, h2, h3{
 
 .navbar {
     background-image: white;
-    padding: 0 !important;
+    padding: 0;
     background-color: #f0ede6;
     border-bottom: #d5d1c7 1px solid;
 }
@@ -104,10 +104,10 @@ h1, h2, h3{
 .wrapper {
     background-color: #FAF9F6;
     padding: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     position: relative;
 
-}
+ }
 
 .title::before {
     content: '';
@@ -117,7 +117,7 @@ h1, h2, h3{
     margin-left: auto;
     margin-right: auto;
     display: block;
-    transform: translateY(63px);
+    transform: translateY(46px);
 }
 
 .title::after {
@@ -127,10 +127,10 @@ h1, h2, h3{
     width: 50px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 40px;
+    margin-bottom: wr00px;
     display: block;
     transform: translateY(8px);
-}
+} 
 
 .info {
     margin-top: 60px;
@@ -231,7 +231,6 @@ h1, h2, h3{
     font-size: 1.3em;
     font-family: 'Lora', serif;
 
-
 }
 
 /*--------banner-----------*/
@@ -301,10 +300,6 @@ h1, h2, h3{
     height: 300px;
 }
 
-.summernote-div {
-    width: '100%';
-    height: '350';
-}
 /*--------recipe details-----------*/
 .text-area {
     text-decoration: underline;
@@ -332,6 +327,7 @@ h1, h2, h3{
  .num-likes{
     position: absolute;
     margin-left: 112px;
+
 
 }
 .like_recipe{
@@ -389,3 +385,11 @@ h1, h2, h3{
         }
     
      } 
+  
+ @media screen and (max-width: 1109px) {
+     .login {
+        
+       margin-bottom: 120px;    
+    } 
+ }
+    
