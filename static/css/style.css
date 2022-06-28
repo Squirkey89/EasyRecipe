@@ -60,17 +60,6 @@ h1, h2, h3{
     float: right;
     text-align: left;
 }
-/* .signup-link{
-    background-image: url("https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg");
-}
-
-.create-link{
-
-
-}
-.recipe-link{
-
-} */
 /*--------banner-----------*/
 .container-img {
     position: relative;
@@ -336,17 +325,12 @@ h1, h2, h3{
     background-color: #FAF9F6;
     border: none;
     width: 20%;    
-    /* font-size: 1.5em; */
     position: absolute;
-    /* margin-top : 0;
-    margin-right : 140px; */
     margin-left: 80px;
 
 }
  .num-likes{
     position: absolute;
-    /* margin-top : -20px;
-    margin-right : 180px; */
     margin-left: 112px;
 
 }
@@ -405,45 +389,3 @@ h1, h2, h3{
         }
     
      } 
-  
- /* @media screen and (max-width:767px) {
-    /* .btn-like {
-        
-        top : 44px;
-        right : 240px;    
-    } */
-
-    /* .num-likes{
-        position: absolute;
-        top : 52px;
-        right : 230px;
-    }
-
- } */ 
-/* @media screen and (max-width:425px) {
-    .btn-like {
-        
-        top : 44px;
-        right : 150px;    
-    }
-
-    .num-likes{
-        position: absolute;
-        top : 52px;
-        right : 150px;
-    }
-
-}  */
-
-/* @media screen and (max-width:375px) {
-    .btn-like { 
-        
-        top : 44px;
-        right : 3200px;    
-    }
-
-    .num-likes{
-        position: absolute;
-        top : 52px;
-        right : 310px; 
-     }
