@@ -33,3 +33,10 @@ recipe.
 # Structure<div id='id-structure'>
 
 ### Wireframe
+
+![Screenshot 2022-06-28 13 32 24](https://user-images.githubusercontent.com/91072896/176179862-bd053d41-5468-4798-a442-8f3e70aa9b7b.png)
+![Screenshot 2022-06-28 13 32 34](https://user-images.githubusercontent.com/91072896/176179861-84dd805a-7de7-4aff-b78a-1a57b6718b62.png)
+![Screenshot 2022-06-28 13 33 01](https://user-images.githubusercontent.com/91072896/176179857-1b7a4fa1-45fa-4818-9e41-76d3a05577ac.png)
+![Screenshot 2022-06-28 13 33 11](https://user-images.githubusercontent.com/91072896/176179850-f2b2313f-f069-4086-a6e0-cdfcb3a3b951.png)
+![Screenshot 2022-06-28 13 33 31](https://user-images.githubusercontent.com/91072896/176179841-c1d4918d-13d9-4e27-b39c-8458644fb1d2.png)
+![Screenshot 2022-06-28 13 33 18](https://user-images.githubusercontent.com/91072896/176179849-87a2ad60-fd35-4a12-994f-0f283c3ce4f2.png)
