@@ -8,6 +8,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Recipe(models.Model):
+    """
+    Model for fields in recipe
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -27,12 +30,21 @@ class Recipe(models.Model):
         User, related_name="recipe_likes", blank=True)
 
     class Meta:
+        """
+        Returns recipes in descending
+        """
         ordering = ['-created_on']
 
     def __str__(self):
+        """
+        Returns the title as a string
+        """
         return self.title
 
     def number_of_likes(self):
+        """
+        Returns number of likes
+        """
         return self.likes.count()
 
     def save(self, *args, **kwargs):
@@ -42,6 +54,9 @@ class Recipe(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Model for fields in comments
+    """
     recipe = models.ForeignKey(
         Recipe, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
@@ -52,6 +67,9 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['created_on']
+        """
+        Returns comments starting with the oldest
+        """
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"

@@ -6,6 +6,9 @@ from .forms import RecipeForm, CommentForm
 
 
 class RecipeList(generic.ListView):
+    """
+    Creates the recipe list
+    """
     model = Recipe
     queryset = Recipe.objects.all()
     list_recipe = queryset
@@ -14,7 +17,9 @@ class RecipeList(generic.ListView):
 
 
 class RecipeDetail(View):
-
+    """
+    creates single recipe view
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -36,6 +41,9 @@ class RecipeDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        function that enables post comments 
+        """
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
@@ -68,7 +76,9 @@ class RecipeDetail(View):
 
 
 class RecipeLike(View):
-
+    """
+    class that allows user to like recipe
+    """
     def post(self, request, slug):
         recipe = get_object_or_404(Recipe, slug=slug)
 
@@ -81,6 +91,9 @@ class RecipeLike(View):
 
 
 def create_recipe(request):
+    """
+    function that enables user to create recipe
+    """  
     user = request.user
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES)
@@ -114,6 +127,9 @@ def edit_recipe(request, slug):
 
 
 def delete_recipe(request, slug):
+    """
+    function that enables user to delete recipe
+    """    
     context = {}
     recipe = get_object_or_404(Recipe, slug=slug)
 
@@ -125,12 +141,21 @@ def delete_recipe(request, slug):
 
 
 def home(request):
+    """
+    renders signup page
+    """    
     return render(request, "index.html")
 
 
 def signup(request):
+    """
+    renders signup page
+    """    
     return render(request, "signup.html")
 
 
 def login(request):
+    """
+    renders login page
+    """    
     return render(request, "login.html")

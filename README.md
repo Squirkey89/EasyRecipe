@@ -232,6 +232,13 @@ I also tested the folowing templates on W3C validator and they all passed.
 
 # Bugs<div id='id-bugs'>
 
+One of the bugs that I encountered when creating the project was in the navigation bar on smaller devices. From tablet view all the way down to the smallest mobile view the nav bar changes to a burger icon with all the links to the different pages on the website nested neatly inside in this icon. The problem that I encountered was that whenever using a smaller device with this website the icon was unresponsive. Clicking on the icon did nothing. 
+
+![Hamburger](https://user-images.githubusercontent.com/91072896/176441843-39d662b0-96d5-4ff7-b749-ebb1596ec846.png)
+
+
+I searched the internet for the solution and read a lot of posts on stack overflow. However, I was still unable to solve the issue. I ended up contacting tutor support and after some experimenting, we realized that the style tag in the base.html was the issue. The bootstrap js script was in the head of the page. The tutor advised that I should change this to the bottom of the body. I tried this and it resoled the issue the burger icon is now responsive on all devices   
+
 # Deployment<div id='id-deployment'>
 This project was developed using a GitPod workspace. The code was committed to Git and pushed to GitHub using the terminal.
 

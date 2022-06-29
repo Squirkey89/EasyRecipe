@@ -6,6 +6,9 @@ from .models import Recipe, Comment
 
 
 class RecipeForm(ModelForm):
+    """
+    Form that allows to add recipe
+    """
     class Meta:
         model = Recipe
         fields = ['title', 'description', 'prep_time', 'cook_time', 'serves',
@@ -22,6 +25,9 @@ class RecipeForm(ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    """
+    Form that allows to add comments
+    """
     class Meta:
         model = Comment
         fields = ('body',)
