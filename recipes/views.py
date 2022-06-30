@@ -42,7 +42,7 @@ class RecipeDetail(View):
 
     def post(self, request, slug, *args, **kwargs):
         """
-        function that enables post comments 
+        function that enables post comments
         """
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -93,7 +93,7 @@ class RecipeLike(View):
 def create_recipe(request):
     """
     function that enables user to create recipe
-    """  
+    """
     user = request.user
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES)
@@ -129,7 +129,7 @@ def edit_recipe(request, slug):
 def delete_recipe(request, slug):
     """
     function that enables user to delete recipe
-    """    
+    """
     context = {}
     recipe = get_object_or_404(Recipe, slug=slug)
 
@@ -143,19 +143,19 @@ def delete_recipe(request, slug):
 def home(request):
     """
     function renders signup page
-    """    
+    """
     return render(request, "index.html")
 
 
 def signup(request):
     """
     function renders signup page
-    """    
+    """
     return render(request, "signup.html")
 
 
 def login(request):
     """
     function renders login page
-    """    
+    """
     return render(request, "login.html")

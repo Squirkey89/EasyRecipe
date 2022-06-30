@@ -307,7 +307,16 @@ h1, h2, h3{
     text-decoration: underline;
 }
 
+#edit {
+   background-color: #0275d8;
+   color: white;
 
+}
+
+#delete {
+    background-color: #d9534f;
+    color: white;
+ }
 
 /*--------comments-----------*/
 
