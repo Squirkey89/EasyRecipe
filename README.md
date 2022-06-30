@@ -7,7 +7,7 @@ The aim of the project was to build a website using the Django framework. This i
 
 # Table of Contents
 1. [UX](#id-ux)
-2. [Developmemnt](#id-dev)
+2. [Scope](#id-scope)
 2. [Structure](#id-structure)
     * [Flow Chart](#id-flow)
     * [Wireframe](#id-wireframe)
@@ -55,7 +55,25 @@ recipe.
 * As a site admin I can delete, edit and update the recipes on the website so that content is posted is relevant related to the website. 
 * As a site admin I can approve comments on the website so that content is posted is relevant related to the website. 
 
-# Development<div id='id-dev'>
+# Scope<div id='id-scope'>
+
+## Webite Objective
+
+ * To provide user with a large library of recipes, that they can try to recreate.
+ * To provide users with the ability to interact with the community using the website.
+ * To provide users a website where the purpose is immediately clear.
+ * To provide user with easy to use navigation to ensure they have the best user experience.
+
+## Webite Requirements
+
+ * Easy website navigation.
+ * Easy mobile navigation as this makes up for a large part of the traffic on the internet.
+ * A website that is viually appealing.
+ * Easy to read and locate recipes.
+ * Easy to sign up, Log in and Log out system.
+ * Registered users can create, read, update and delete their recipes.
+ * Registered Users can comment and like recipes.
+
 
 # Structure<div id='id-structure'>
 I wanted to create a simple design which was attractive on the eye, but also easy for the user to navigate and use all the features. In planning my design I made a flow chart, wireframe and database schema. This allowed me to have a plan before I began coding.
@@ -76,6 +94,9 @@ Balsamiq was used to create the wireframes during the design process.&nbsp;
 ![Screenshot 2022-06-28 13 33 18](https://user-images.githubusercontent.com/91072896/176179849-87a2ad60-fd35-4a12-994f-0f283c3ce4f2.png)
 
 ## Database Schema<div id='id-Database-Schema'>
+
+This shows the two models that were used in this project the recipe and comment models
+
 ![Database Schema](https://user-images.githubusercontent.com/91072896/176322366-e91262a5-08d5-4414-a403-23a1e3a8fe61.png)
 
 
