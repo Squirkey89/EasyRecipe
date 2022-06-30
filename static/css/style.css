@@ -3,7 +3,7 @@
     margin: 0;
 
 }
-
+/*--------Body-----------*/
 html,
 body {
     width: 100%;
@@ -61,10 +61,6 @@ h1, h2, h3{
     text-align: left;
 }
 /*--------banner-----------*/
-.container{
-    /* background-color: #FAF9F6!important;     */
-
-}
 .container-img {
     position: relative;
     text-align: center;
@@ -112,6 +108,8 @@ h1, h2, h3{
     position: relative;
 
  }
+
+/*--------Index about and How it works sections-----------*/
 
 .title::before {
     content: '';

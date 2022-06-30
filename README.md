@@ -7,6 +7,7 @@ The aim of the project was to build a website using the Django framework. This i
 
 # Table of Contents
 1. [UX](#id-ux)
+2. [Developmemnt](#id-dev)
 2. [Structure](#id-structure)
     * [Flow Chart](#id-flow)
     * [Wireframe](#id-wireframe)
@@ -14,12 +15,15 @@ The aim of the project was to build a website using the Django framework. This i
 3. [Features](#id-features)
     * [Navigation-bar ](#id-nav)
     * [Banner/About](#id-banner) 
-    * [How it Works](#id-works)
+    * [How It Works](#id-works)
     * [Recipes](#id-recipes)
+    * [Recipes Details](#id-details)
+    * [Create/Edit recipe](#id-create/edit)
     * [Edit/Delete recipe](#id-edit/delete)
     * [Comments](#id-comments)
     * [Like Button](#id-like)
     * [Sign Up/Login](#id-login)
+    * [Footer](#id-footer)
 4. [Features to Implement in the future](#id-implement)
 5. [Testing](#id-testing) 
 6. [Bugs](#id-bugs) 
@@ -51,7 +55,10 @@ recipe.
 * As a site admin I can delete, edit and update the recipes on the website so that content is posted is relevant related to the website. 
 * As a site admin I can approve comments on the website so that content is posted is relevant related to the website. 
 
-# Structure
+# Development<div id='id-dev'>
+
+# Structure<div id='id-structure'>
+I wanted to create a simple design which was attractive on the eye, but also easy for the user to navigate and use all the features. In planning my design I made a flow chart, wireframe and database schema. This allowed me to have a plan before I began coding.
 
 ## Flow Chart<div id='id-flow'>
 This flow chart I created shows the structure of the application I wanted to create.&nbsp;
@@ -59,6 +66,7 @@ This flow chart I created shows the structure of the application I wanted to cre
 ![flow chart](https://user-images.githubusercontent.com/91072896/176413657-9c65fe51-4a18-4fee-9671-e3c44fee1395.png)
 
 ### Wireframe<div id='id-wireframe'>
+Balsamiq was used to create the wireframes during the design process.&nbsp;
 
 ![Screenshot 2022-06-28 13 32 24](https://user-images.githubusercontent.com/91072896/176179862-bd053d41-5468-4798-a442-8f3e70aa9b7b.png)
 ![Screenshot 2022-06-28 13 32 34](https://user-images.githubusercontent.com/91072896/176179861-84dd805a-7de7-4aff-b78a-1a57b6718b62.png)
@@ -102,7 +110,24 @@ The recipes page is where the user's recipes are displayed. Once a recipe is cre
 
 ![Recipes](https://user-images.githubusercontent.com/91072896/176276742-9fc44f5a-ca3b-4db1-b886-beab396bff72.png)
 
-## Edit/delete recipe.<div id='id-edit/delete'>  
+## Recipe Details<div id='id-details'>
+
+The recipe detail page is where the user will go once, they click on view recipe. This page contains all the recipe information while there is little information on the recipe page. This page goes into more detail on each recipe. On this page the user can view cooking information the ingredients and the instructions need to create the recipe. The user is provided with all the information they need to recreate the recipe. The edit and delete section, like button and comments section, are all on this page.&nbsp;
+
+![recipe detail](https://user-images.githubusercontent.com/91072896/176569709-6ab3568d-7512-4b40-bd34-ce67dbe49b0c.png)
+
+## Create/Edit Recipe<div id='id-create/edit'> 
+The create page is where the user post recipes. The create recipe and edit recipe are the exact same form except for one creates a new recipe and edit recipe is when the user can make changes to their own recipe. THe user need to be registered before they can create a recipe. If not they will come across the page below and they will not be able to proceed without logging or signing up. The form includes all the fields required when creating a recipe.&nbsp;
+![Screenshot 2022-06-29 21 11 20](https://user-images.githubusercontent.com/91072896/176567591-584e1e1b-d75a-4a76-a062-d6d85199a780.png)
+
+
+
+This is the image the user will encounter if they have not signed up or logged into their account.&nbsp;
+![registration 2022-06-28 20 56 01](https://user-images.githubusercontent.com/91072896/176565893-703453b6-030b-42c9-b8e7-14197fbe89a7.png)
+
+
+
+## Edit/delete recipe<div id='id-edit/delete'>  
 
 This is located on the recipe detail page. This can only be actioned if the user was the one who had created the recipe they cannot edit or delete recipes left by other users. If they are not authorized the option will not appear on the page for that user. If the user wants to edit the page they will be brought to a form where they can change any of the information, they put in. If they choose delete, they will be brought to another page to confirm that they want to delete the recipe.&nbsp;
 
@@ -129,6 +154,13 @@ The Sign up page is designed to allow new users to create an account which will 
 ![login](https://user-images.githubusercontent.com/91072896/176425682-81476035-52e6-4371-83a0-5fce58a0c9a3.png)
 ![sign up](https://user-images.githubusercontent.com/91072896/176425689-5a3ca789-bbed-4c35-9334-3d054f2e7c16.png)
 
+## Footer<div id='id-footer'>
+
+The footer was created to be simple and clean. I didnt want too much information to appear on the footer. I believe a cleaner looking footer enhances the design of the entire website. The footer contains the copyright Easy Recipe and the websites social media links. All social media links open in new tabs.&nbsp; 
+
+![footer](https://user-images.githubusercontent.com/91072896/176568619-c3fe3a2e-c898-4b2e-b9d4-8bd8fd1686b0.png)
+
+
 # Features to Implement in the future<div id='id-implement'>
 
 ## Search bar
@@ -141,13 +173,13 @@ The Sign up page is designed to allow new users to create an account which will 
 ## Comment counter
    * A feature similar to the like counter would keep track of the number of comments made on a post. As more comments on a recipe mean more opinions and may play a role in influencing the user's decision to try it, this would benefit the user as well.
 
-## Nutrional informtaion
-   * This will have nutritional information about each recipe, such as the amount of protein, fats, and carbohydrates. I believe this would be helpful to the user since many people track macros, so they can identify how much of these macros they are consuming from each recipe. Also When making a recipe for their children, parents can determine whether the recipe is healthy.
+## Nutritional informtaion
+   * This will have nutritional information about each recipe, such as the amount of protein, fats, and carbohydrates. I believe this would be helpful to the user since many people track macros, so they can identify how much of these macros they are consuming from each recipe. Also when a parent is making a recipe for their children, parents have the nutritional informayion to decide whether the recipe is healthy.
 
-
-
+## Forgot password
+  * In my wireframe, I had planned to introduce this feature. In the end, however, I decided not to implement the forget password feature, but I will definitely consider implementing it in my next project. This feature will be available on the login page. It will be a link that will bring the user to a page where they will enter their email address. The user will be sent a reset email. Then they can change the password and log back into their account.
 ## Star rating
-   * While I have a like button on the recipe detail page on each recipe, I would definitely like to implement a star system. I would put this on the bottom of the cooking info card, and also on the recipe cards on the recipe page. This would be used instead of the like button. This would give better feedback to the user on of how successful they were when using the recipe.
+   * While I have a like button on the recipe detail page on each recipe, I would definitely like to implement a star system. I would put this on the bottom of the cooking info card, and also on the recipe cards on the recipe page. This would be used instead of the like button. This would give better feedback to the user on of how successful other users were when using the recipe.
 
 
 # Testing<div id='id-testing'>
@@ -196,14 +228,19 @@ I tested the folowing files on Pep8 validator and they all passed.
   * admin.py
   * settings.py
 
+### W3C Validation
 I also tested the folowing templates on W3C validator and they all passed.
   * base.html
-  * create_recipe.html
   * delete_recipe.html
-  * edit_recipe.html
   * recipe_detail.html
   * recipe.html
   * index.html
+  
+When I tested the following templates on W3C validator I found some errors. 
+  * create_recipe.html
+  * edit_recipe.html
+
+The errors on these pages are related to summernote. When summernote was in my forms there were a lot of errors and when I removed summernote from my forms there were no errors. I seached google and slack to try to figure out the issue and how to resolve it. I was finding a lot of information, but it was not definitive. I contacted tutor support for advice on this issue. They advised me that this comes with summernote that it is a plugin and its code is not something you can control or edit. I decided tom keep it in my project as I believe it gives the user a better experience.
 
 ### Search Engines
   * Google Chrome
@@ -228,16 +265,23 @@ I also tested the folowing templates on W3C validator and they all passed.
   * Summernote
   * Cloudinary
   * Crispy Forms
+  * Balsamiq
+
+
 
 
 # Bugs<div id='id-bugs'>
 
-One of the bugs that I encountered when creating the project was in the navigation bar on smaller devices. From tablet view all the way down to the smallest mobile view the nav bar changes to a burger icon with all the links to the different pages on the website nested neatly inside in this icon. The problem that I encountered was that whenever using a smaller device with this website the icon was unresponsive. Clicking on the icon did nothing. 
+* One of the bugs that I encountered when creating the project was in the navigation bar on smaller devices. From tablet view all the way down to the smallest mobile view the nav bar changes to a burger icon with all the links to the different pages on the website nested neatly inside in this icon. The problem that I encountered was that whenever using a smaller device with this website the icon was unresponsive. Clicking on the icon did nothing.&nbsp;
+I searched the internet for the solution and read a lot of posts on stack overflow. However, I was still unable to solve the issue. I ended up contacting tutor support and after some experimenting, we realized that the style tag in the base.html was the issue. The bootstrap js script was in the head of the page. The tutor advised that I should change this to the bottom of the body. I tried this and it resoled the issue the burger icon is now responsive on all devices.&nbsp;   
 
 ![Hamburger](https://user-images.githubusercontent.com/91072896/176441843-39d662b0-96d5-4ff7-b749-ebb1596ec846.png)
 
+A second issue I encounteres was with summernote. This was added to my forms for the instructions and ingredients field. When I had put the summernote in these fields and viewed this on the local server it did not render correctly.
+I spent the best part of a day trying to figure what was going wrong. I had come to the stage where I was going to take it out of my form completely. I contacted tutor support and within minutes they solved the problem The DEBUG in my settings.py file was set to False. Once I set this back to true the form worked as intended.&nbsp;
 
-I searched the internet for the solution and read a lot of posts on stack overflow. However, I was still unable to solve the issue. I ended up contacting tutor support and after some experimenting, we realized that the style tag in the base.html was the issue. The bootstrap js script was in the head of the page. The tutor advised that I should change this to the bottom of the body. I tried this and it resoled the issue the burger icon is now responsive on all devices   
+![summernote](https://user-images.githubusercontent.com/91072896/176498895-fd580bc3-b8b9-4981-a0c2-a398010b1679.png)
+
 
 # Deployment<div id='id-deployment'>
 This project was developed using a GitPod workspace. The code was committed to Git and pushed to GitHub using the terminal.
@@ -284,16 +328,17 @@ Store Static and Media files in Cloudinary and Deploy to Heroku:
 
 # Credits<div id='id-credits'>
 ## Content
-  * I used the Code Institutes I think therefore I blog walkthrough project asa reference.
-  * I also referenced the love maths project when transfering data from python to the spreadsheet in the update_worksheet function.
-  * All the question that are used in the quiz were taken from [Open Trivia Database](https://opentdb.com/api_config.php)
+  * I used the Code Institutes I think therefore I blog walkthrough project as a reference.At the beginning of this project I was following along but as time went by I got to grips with Django I create my own website.
+  * Fot the three images on the index page that link to sign up, create recipe and recipe pages. I referenced code on [codeconvey.com](https://codeconvey.com/Tutorials/html-images-side-by-side-with-captions/) particularly in my CSS to style the links.
   * [Am I Responsive](http://ami.responsivedesign.is/) was used for the header image that appears at the top of the read me file.
-  * While researching the application that I would build I took inspiration from [Mike Dane](https://www.youtube.com/watch?v=SgQhwtIoQ7o&t=179s&ab_channel=MikeDane) and also from [Bro Code](https://www.youtube.com/watch?v=yriw5Zh406s&t=513s&ab_channel=BroCode). After viewing those videos this encouraged me to make a quiz game.
+
 
 ## Media
-  * I used Bord bia recipes page for the images and recipe content tghat was used in the website.
-  * The images used in the website were [Pexels]
+  * I used [Bord Bia](https://www.bordbia.ie/recipes/) recipes page for the images and recipe content that I used in this project.
+  * The images used in the website were souced form [Pexels](https://www.pexels.com/), [Shutterstock](https://www.shutterstock.com/), [Istockphoto](https://www.istockphoto.com/) and [pngwing](https://www.pngwing.com/)
   * I used [lucid chart](https://lucid.app/lucidchart/9331c746-149f-43ee-99b4-f5d069569366/edit?beaconFlowId=7EBCDF6C52EB4D67&invitationId=inv_2f7a6c93-0720-4f95-821a-a505c29dcaa4&page=NfXTJ6v46zip#) to create my flow chart.
+  * I used [Balsamiq](https://balsamiq.com/) to create the wireframe.
+  * I also used [Creately](https://creately.com/) to create my database schema.
 
 ## Acknowledgments<div id='id-acknowledgements'>
   * My mentor for the useful feedback direction and guidance he has provided since the beginning of the course.

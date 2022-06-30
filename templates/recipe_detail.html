@@ -14,9 +14,9 @@
                 <!--Recipe image-->
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="https://res.cloudinary.com/squirkey89/image/upload/v1654978534/91c56347-e8d0-466f-b0a2-3fe092f49605_upxgxh.jpg"
-                    style="width: 100%; height: 150px" alt="">
+                     alt=" plate and untensils">
                 {% else %}
-                <img src=" {{ recipe.featured_image.url }}" style="width: 100%; height: 100%;" alt="">
+                <img src=" {{ recipe.featured_image.url }}" style="width: 100%; height: 100%;" alt="recipe image">
                 {% endif %}
             </div>
             <div class="like_recipe row">

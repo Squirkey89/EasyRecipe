@@ -7,7 +7,7 @@ from .forms import RecipeForm, CommentForm
 
 class RecipeList(generic.ListView):
     """
-    Creates the recipe list
+    class that creates the recipe list
     """
     model = Recipe
     queryset = Recipe.objects.all()
@@ -142,20 +142,20 @@ def delete_recipe(request, slug):
 
 def home(request):
     """
-    renders signup page
+    function renders signup page
     """    
     return render(request, "index.html")
 
 
 def signup(request):
     """
-    renders signup page
+    function renders signup page
     """    
     return render(request, "signup.html")
 
 
 def login(request):
     """
-    renders login page
+    function renders login page
     """    
     return render(request, "login.html")
