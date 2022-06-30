@@ -14,32 +14,33 @@
                 <!--Recipe image-->
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="https://res.cloudinary.com/squirkey89/image/upload/v1654978534/91c56347-e8d0-466f-b0a2-3fe092f49605_upxgxh.jpg"
-                     alt=" plate and untensils">
+                    alt=" plate and untensils">
                 {% else %}
                 <img src=" {{ recipe.featured_image.url }}" style="width: 100%; height: 100%;" alt="recipe image">
                 {% endif %}
             </div>
             <div class="like_recipe row">
-                <p class="post-subtitle text col-8 mb-0">Created by: <em>{{ recipe.author }}</em>| </p><p class="post-subtitle text col-8 mt-0">Created on:
+                <p class="post-subtitle text col-8 mb-0">Created by: <em>{{ recipe.author }}</em>| </p>
+                <p class="post-subtitle text col-8 mt-0">Created on:
                     <em>{{ recipe.created_on }}</em>|</p>
-                    <div class="col-4 btn-like">
-                        <form action="{% url 'recipe_like' recipe.slug %}" class="d-inline text-center" method="POST">
-                            {% csrf_token %}
-                            {% if user.is_authenticated %}
-                            {% if liked %}
-                            <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
-                                    class="fas fa-heart"></i></button>
-                            {% else %}
-                            <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
-                                    class="far fa-heart"></i></button>
-                            {% endif %}
+                <div class="col-4 btn-like">
+                    <form action="{% url 'recipe_like' recipe.slug %}" class="d-inline text-center" method="POST">
+                        {% csrf_token %}
+                        {% if user.is_authenticated %}
+                        {% if liked %}
+                        <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
+                                class="fas fa-heart"></i></button>
+                        {% else %}
+                        <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
+                                class="far fa-heart"></i></button>
+                        {% endif %}
                         {% else %}
 
                         <span class="text-secondary"><i class="far fa-heart btn-like mt-1"></i></span>
                         {% endif %}
                         <span class="text-seconday num-likes"> {{ recipe.number_of_likes }}</span>
                     </form>
-                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-6 mt-3">
@@ -78,8 +79,8 @@
         <h2>Edit or Delete posts on Easy Recipe</h2>
         <p>You can edit or delete any recipes that you have created once you have signed up on our signup page</p>
         <p>Just click on the relevant button below to perform that action</p>
-                <a class="btn crud-btn" id="edit" href="{% url 'edit_recipe' recipe.slug %}" role="button">Edit</a>
-                <a class="btn crud-btn" id="delete" href="{% url 'delete_recipe' recipe.slug %}" role="button">Delete</a>
+        <a class="btn crud-btn" id="edit" href="{% url 'edit_recipe' recipe.slug %}" role="button">Edit</a>
+        <a class="btn crud-btn" id="delete" href="{% url 'delete_recipe' recipe.slug %}" role="button">Delete</a>
     </div>
     {% endif %}
     <div class="col mb-5">
@@ -124,26 +125,26 @@
                         {% csrf_token %}
                         <button type="submit" class="btn btn-dark mt-4">Submit</button>
                     </form>
-                        {% else %}
-                        <div class="col-sm-5 mt-2">
-                            <div class="card" style="height: 29em;">
-                                <div class="card-body">
-                                    <h5 class="card-title mt-2 mb-4 text-center">Leave a comment:</h5>
-                                    <p class="comment-p mt-4">You can interact with other users by commenting on their
-                                        recipes.</p>
-                                    <p class="comment-p mt-4">You can also see comments from other users on recipes that
-                                        you have posted.</p>
-                                    <p class="comment-p mt-4">To leave a comment you need to <a
-                                            href="{% url 'account_signup' %}">sign up</a> and create an account.
-                                    </p>
-                                    <p class="comment-p mt-4">If you already have an account you must <a
-                                            href="{% url 'account_login' %}">sign
-                                            in</a> to leave comments.</p>
-                                    {% endif %}
-                                    {% endif %}
+                    {% else %}
+                    <div class="col-sm-5 mt-2">
+                        <div class="card" style="height: 29em;">
+                            <div class="card-body">
+                                <h5 class="card-title mt-2 mb-4 text-center">Leave a comment:</h5>
+                                <p class="comment-p mt-4">You can interact with other users by commenting on their
+                                    recipes.</p>
+                                <p class="comment-p mt-4">You can also see comments from other users on recipes that
+                                    you have posted.</p>
+                                <p class="comment-p mt-4">To leave a comment you need to <a
+                                        href="{% url 'account_signup' %}">sign up</a> and create an account.
+                                </p>
+                                <p class="comment-p mt-4">If you already have an account you must <a
+                                        href="{% url 'account_login' %}">sign
+                                        in</a> to leave comments.</p>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-    {% endblock content %}
+            {% endblock content %}

@@ -95,7 +95,7 @@ Balsamiq was used to create the wireframes during the design process.&nbsp;
 
 ## Database Schema<div id='id-Database-Schema'>
 
-This shows the two models that were used in this project the recipe and comment models
+This shows the two models that were used in this project the recipe and comment models.
 
 ![Database Schema](https://user-images.githubusercontent.com/91072896/176322366-e91262a5-08d5-4414-a403-23a1e3a8fe61.png)
 
@@ -240,6 +240,25 @@ recipe.
    * As soon as a user posts a comment, the comment must be approved by the site administrator. This enables the site administrator to ensure that the content posted is relevant to the website. 
 
 ## Manual Testing
+
+### Feature testing
+
+* Navigation works on all pages.
+* The login , logout and signup pages work.
+* When the user is logged in the sign up and login button are removed.
+* The comment form works, When posting a comment.
+* An alert pops up when the user posts a comment.
+* The user is unable to comment without signing in or registering
+* The links all work at the bottom of the index page at the how it works section.
+* Create recipe form works the a a new form is displayed on the recipe detail page when form is complete.
+* Edit recipe form works when information is updated this changes on the recipe detail page.
+* Delete recipe form works and the recipe is removed from the site.
+* Authorization to edit and delete recipes created works.
+* Authorization to like comment and leave a recipe work.
+* The like button and like counter both work.
+* Pagination is working only six recipes are displayed on a page. Any more and a new page is created. 
+
+
 ### Pep8 Validation
 I tested the folowing files on Pep8 validator and they all passed.
   * views.py
