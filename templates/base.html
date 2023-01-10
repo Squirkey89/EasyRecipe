@@ -2,24 +2,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Links and scripts-->
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Easy Recipes</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Nunito+Sans&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.js"></script>
     <script src="https://kit.fontawesome.com/97488dfb41.js" crossorigin="anonymous"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 </head>
 
 <body>
-    <section id="nav-bar">
+    <!--Navigation-->
+
+    <div id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <h1><i class="fa-solid fa-hat-chef"></i>Easy Recipes</h1>
+                    <h2>Easy Recipes</h2>
                     <h2 class="logo">Cooking made easy</h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -31,8 +40,9 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'create_recipe' %}">CREATE RECIPE</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'recipe' %}">RECIPES</a>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item active"><a class="nav-link"href="{% url 'account_logout' %}">LOGOUT</a></li>
+                            {% if user.is_authenticated %}
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
+                        </li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">SIGN UP</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">LOGIN</a></li>
@@ -42,47 +52,45 @@
                 </div>
             </div>
         </nav>
-    </section>    
-    <section class="content">
-    {% block content %}
+    </div>
+    <div class="content">
+        {% block content %}
 
-    {% endblock content %}
-    </section>    
-    <section>
+        {% endblock content %}
+    </div>
+    <!--Footer-->
+    <div>
         <footer class="bg-dark text-white pt-5 pb-4">
             <div class="row align-items-center">
 
-                <div class="col-md-7 col-lg-8">
-                    <p class="foot-logo">Copyright reserved by:<strong class="font-weight-bold text-warning"> Easy
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                    <p class="foot-logo">Copyright reserved by:<strong class="font-weight-bold text-warning"> <br>Easy
                             Recipe&copy;</strong></p>
 
                 </div>
-                <div class="col-md-5 col-lg-4 footer">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
                     <div class="text-center text-md-right">
                         <ul class="list-unstyled list-inline">
                             <li class="list-inline-item">
                                 <a href="https://www.facebook.com/" target="_blank"
-                                    class="btn-floating btn-sm text-white" style="font: size 23px;"><i
-                                        class="fab fa-facebook"></i></a>
+                                    class="btn-floating btn-sm text-white socials"><i class="fab fa-facebook"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://twitter.com/" target="_blank" class="btn-floating btn-sm text-white"
-                                    style="font: size 23px;"><i class="fab fa-twitter"></i></a>
+                                <a href="https://twitter.com/" target="_blank"
+                                    class="btn-floating btn-sm text-white socials"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="https://www.instagram.com/" target="_blank"
-                                    class="btn-floating btn-sm text-white" style="font: size 23px;"><i
-                                        class="fab fa-instagram"></i></a>
+                                    class="btn-floating btn-sm text-white socials"><i class="fab fa-instagram"></i></a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="https://www.linkedin.com/" target="_blank"
-                                    class="btn-floating btn-sm text-white" style="font: size 23px;"><i
+                                    class="btn-floating btn-sm text-white socials"><i
                                         class="fab fa-linkedin-in"></i></a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="https://www.youtube.com/" target="_blank"
-                                    class="btn-floating btn-sm text-white" style="font: size 23px;"><i
-                                        class="fab fa-youtube"></i></a>
+                                    class="btn-floating btn-sm text-white socials"><i class="fab fa-youtube"></i></a>
                             </li>
                         </ul>
 
@@ -90,10 +98,13 @@
 
                 </div>
             </div>
-            </div>
+
 
         </footer>
-    </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
     margin: 0;
 
 }
-
+/*--------Body-----------*/
 html,
 body {
     width: 100%;
@@ -11,14 +11,14 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background-color: #FAF9F6 !important;
+    background-color: #FAF9F6!important;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 
-h1{
+h1, h2, h3{
     font-family: 'Lora', serif;
 
 }
@@ -34,7 +34,7 @@ h1{
 
 .navbar {
     background-image: white;
-    padding: 0 !important;
+    padding: 0;
     background-color: #f0ede6;
     border-bottom: #d5d1c7 1px solid;
 }
@@ -60,7 +60,6 @@ h1{
     float: right;
     text-align: left;
 }
-
 /*--------banner-----------*/
 .container-img {
     position: relative;
@@ -103,12 +102,13 @@ h1{
 
 /*--------banner-----------*/
 .wrapper {
-    background-color: #FAF9F6;
     padding: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     position: relative;
 
-}
+ }
+
+/*--------Index about and How it works sections-----------*/
 
 .title::before {
     content: '';
@@ -131,7 +131,7 @@ h1{
     margin-bottom: 40px;
     display: block;
     transform: translateY(8px);
-}
+} 
 
 .info {
     margin-top: 60px;
@@ -153,13 +153,14 @@ h1{
 
   }
 
-.foot-logo {
-    padding-left: 80px;
-}
+/*--------Index.html title text-----------*/
 
 .title {
     margin-bottom: 10px;
 }
+
+/*--------Index.html linked images-----------*/
+
 .container-img{
     background-size: cover;
     background-repeat: no-repeat;
@@ -172,7 +173,6 @@ h1{
 }
 
 .image-list-small {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     text-align: center;
     max-width: 640px;
@@ -211,7 +211,7 @@ h1{
 .image-list-small .details {
     margin-top: 13px;
   }  
-  .image-list-small .details h3 {
+  .image-list-small .details p {
     display: block;
     font-size: 14px;
     margin: 0 0 3px 0;
@@ -219,23 +219,40 @@ h1{
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .image-list-small .details h3 a {
+  .image-list-small .details p a {
     color: #303030;
     text-decoration: none;
     font-size: 20px;
   }
   .container{
     margin-bottom: 140px;
- }
+
+  }
+  .details{
+    font-size: 1.3em;
+    font-family: 'Lora', serif;
+
+}
+
+/*--------banner-----------*/
+
+ 
 .footer{
     margin: auto 0;
 
 }
+.foot-logo {
+    padding-left: 100px;
+}
+.socials{
+    font-size: 18px;
+}
+
+/*--------Create recipe form-----------*/
+
 .form-border{
-    border: 3px solid black;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 30px;
+    margin-top: 50px;
+    margin-bottom: 0px;
 
 }
 .container{
@@ -262,11 +279,12 @@ h1{
 
 }
 
-
-#card-btn{
-    bottom: 150px;
+.card-body{
+    font-size: 19px;    
 }
-/*--------cards-----------*/
+
+
+/*--------register create recipe-----------*/
 
 .asteriskField {
     display: none;
@@ -283,7 +301,56 @@ h1{
     height: 300px;
 }
 
+/*--------recipe details-----------*/
+.text-area {
+    text-decoration: underline;
+}
+
+#edit {
+   background-color: #0275d8;
+   color: white;
+
+}
+
+#delete {
+    background-color: #d9534f;
+    color: white;
+ }
+
+/*--------comments-----------*/
+
+.comment-p {
+    font-size: 16px;
+    text-align: center;
+}
+
+/*--------like button-----------*/
+
+.btn-like {
+    background-color: #FAF9F6;
+    border: none;
+    width: 20%;    
+    position: absolute;
+    margin-left: 80px;
+
+}
+ .num-likes{
+    position: absolute;
+    margin-left: 112px;
+
+
+}
+.like_recipe{
+    position: relative;
+}
+
 /*--------media queries-----------*/
+@media screen and (max-width: 991px) {
+    .card-body {
+        font-size: 16px;    
+        
+    }
+}
 
 @media screen and (max-width: 849px) {
     .centered {
@@ -297,9 +364,42 @@ h1{
         font-size: 1.2em;
     }
 }
-@media screen and (max-width:425px) {
+@media screen and (max-width:575px) {
     .centered {
         
         font-size: 1em;
     }
+
 }
+
+ @media screen and (max-width:1024px) {
+
+    .num-likes{
+        margin-left: 105px;
+
+    }
+
+}
+@media screen and (max-width:375px) {
+
+    .num-likes{
+        margin-left: 100px;
+
+    }
+}
+@media screen and (max-width: 1199px) {
+         .foot-logo,.socials {
+            text-align: center;
+            padding: 0;
+          
+        }
+    
+     } 
+  
+ @media screen and (max-width: 1109px) {
+     .login {
+        
+       margin-bottom: 120px;    
+    } 
+ }
+    

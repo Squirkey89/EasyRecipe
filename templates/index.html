@@ -3,21 +3,26 @@
 
 
 {% block content %}
-<section>
-  
-      <div class="container-img">
-        {% load static %}
-        <img class="image" src="https://res.cloudinary.com/squirkey89/image/upload/v1654970186/food_cb6oue.jpg"
-          alt="home">
+<div>
 
-        <div class="centered img-text">Welcome to Easy Recipes. You'll find simple, step-by-step recipes that you can
-          make yourself.
-        </div>
-      </div>
-</section>
-<section class="wrapper">
+  <!--Banner Image and text-->
+
+  <div class="container-img">
+    {% load static %}
+    <img class="image" src="https://res.cloudinary.com/squirkey89/image/upload/v1654970186/food_cb6oue.jpg"
+      alt="banner image">
+
+    <div class="centered img-text">Welcome to Easy Recipes. You'll find simple, step-by-step recipes that you can
+      make yourself.
+    </div>
+  </div>
+
+  <!--About us section-->
+
+</div>
+<div class="wrapper">
   <div class="info">
-    <h1 class="title text-center">WHAT WE DO?</h1>
+    <h2 class="title text-center">WHAT WE DO?</h2>
     <div class="text-center">
       <p>We want to create a library of tasty dishes, and want to show you how easy it is to prepare
         these meals yourself.</p>
@@ -32,35 +37,32 @@
         created by others.</p>
     </div>
   </div>
-</section>
+</div>
 
-<section class="container">
+<!--Links showing how to use website-->
+
+<div class="container">
   <div class="row">
-    <h1 class="title text-center">HOW IT WORKS</h1>
+    <h2 class="title text-center">HOW IT WORKS</h2>
     <ul class="image-list-small">
       <li>
         <a href="{% url 'account_signup' %}"><img
-            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg" alt="" />
-          <div class="details">
-            <h3><a href="#">Sign Up</a></h3>
-          </div>
+            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/su_dtcosb.jpg" alt="sign up text"></a>
+        <p class="details">Sign Up</p>
       </li>
       <li>
         <a href="{% url 'create_recipe' %}"><img
             src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/iStock-187990397-1024x686-1_btn3ss.jpg"
-            alt="" />
-          <div class="details">
-            <h3><a href="#">Create Receipe</a></h3>
-          </div>
+            alt="preparing food"></a>
+        <p class="details">Create Receipe</p>
       </li>
       <li>
         <a href="{% url 'recipe' %}"><img
-            src="https://res.cloudinary.com/squirkey89/image/upload/v1654813501/Spaghetti-Sauce-13_t5p3be.jpg"
-            alt=""></a>
-        <div class="details">
-          <h3><a href="#">Recipes</a></h3>
-        </div>
+            src="https://res.cloudinary.com/squirkey89/image/upload/c_scale,h_2546,w_3795/v1656068196/indian-food-on-restaurant-table_i7fxe1.jpg"
+            alt="table filled with recipes"></a>
+        <p class="details">Recipes</p>
       </li>
     </ul>
-</section>
+  </div>
+</div>
 {% endblock content %}
